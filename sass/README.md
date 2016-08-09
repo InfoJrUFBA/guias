@@ -3,3 +3,7 @@
 Sass é um pré-processador de CSS.
 
 [Site oficial](https://sass-lang.com/)
+
+- Autor: @jprodrigues70;
+- E-mail: joaorodrigues@infojr.com.br / 70jprodrigues@gmail.com
+- Bibliografia: SANTOS, Rafael - Introdução à programação Orientada a Objetos Usando JAVA.
