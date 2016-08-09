@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="assets/css/manualTrainee.css">
+        <link rel="icon" type="image/png" href="assets/img/infojr-ico.svg">
+        <title>Guias - POO</title>
+    </head>
+    <body>
+        <section class="blue center full">
+            <div class="image">
+                <img src="assets/img/poo.svg" alt="" />
+                <h1>Programação Orientada a Objetos</h1>
+            </div>
+        </section>
+        <section class="">
+            <div class="text">
+                <h1>Oxe, lá ele. O que é isso?</h1>
+                <p>
+                    Programação Orientada a Objetos ou, abreviadamente, <b>POO</b>, é um <b>paradigma de programação</b> de computadores onde se usam <b>classes e objetos</b>, criados a partir de <b>modelos</b>, para representar e processar dados usando programas de computadores.
+                </p>
+                <p>
+                    A POO é baseada em 4 pilares fundamentais: Abstração, Encapsulamento, Herança e Polimorfismo.
+                </p>
+                <h4>
+                    <b>Êta diaxo... falou grego!</b>
+                </h4>
+                <p>
+                    Óh, <b>modelos</b> são representações simplificadas de objetos, pessoas, items, tarefas, processos, conceitos, ideias, etc. São utilizados comumente por pessoas, independente da programação de computadores.
+                </p>
+                <p>
+                    Um exemplo de modelo poderia ser um daqueles papeizinhos onde o garçon anota seu pedido.
+                </p>
+            </div>
+            <div class="image">
+                <img class="reduces" src="assets/img/modelo.svg" alt="" />
+            </div>
+        </section>
+        <section class="green">
+            <div class="image">
+                <img class="" src="assets/img/cars.svg" alt="" />
+            </div>
+            <div class="text-right">
+                <h1>E essa tal de Classe aí?</h1>
+                <h4>
+                    Meu filho...
+                </h4>
+                <p>
+                    Bom, podemos entender Classe como a representação dos modelos que criamos no nosso dia-a-dia.
+                </p>
+                <p>
+                    Ela é uma estrutura que abstrai um conjunto de <b>objetos</b> com características similares . Uma classe define o comportamento de seus objetos através de <b>métodos</b>, e os estados possíveis destes objetos através de <b>atributos</b>.
+                </p>
+                <p>
+                    Para entender o que é <b>atributo</b> e o que é método, imagine que você quisesse abstrair um carro. Todo carro tem cor, modelo, marca, tipo de combustível, tipo ou tamanho das rodas, potência, velocidade máxima, velocidade atual, enfim... esses são os nossos <b>atributos</b> para uma <b>classe</b> carro.
+                    Os métodos são as funções que podemos atribuir a cada carro. Sei lá, podemos acelerar um carro, freiar, alterar a cor, alterar as rodas, etc.
+                </p>
+                <h4><b>SIM, e objeto... ??</b></h4>
+                <p>
+                    Vey, os objetos são cada "carro" que você criar baseado no modelo que a classe "carro" representa. O objeto ou instância é a materialização da classe.
+                    Ex: Carro azul, 2006, Ford, a gasolina, rodas aro 22, 533cv, 600 km/h, a 150 km/h.
+                </p>
+            </div>
+        </section>
+        <section>
+            <div class="text">
+                <h1>
+                    Agora vem cá, por quê utilizar POO?
+                </h1>
+                <p>
+                    Aaah, êis a questão!
+                </p>
+                <p>
+                    Basicamente, você vai querer utilizar POO em aplicações onde seja necessário representar conjuntos de dados dependentes ou interligados entre si (ex: datas, registros de alunos, contas bancárias, etc). Similarmente, qualquer aplicação onde seja necessário aplicar um conjunto de rotinas específicas a um conjunto de dados.
+                </p>
+                <p>
+                    Algumas vantagens de programar com orientação a objetos:
+                </p>
+                <ul>
+                    <li>Facilidade em modularizar e reutilizar o código (menos tempo de desenvolvimento, menos linhas de código);</li>
+                    <li>Aproximação do sistema criado ao que é observado no mundo real;</li>
+                    <li>Facilidade em realizar leitura e manutenção de código;</li>
+                </ul>
+            </div>
+            <div class="image">
+                <img class="reduces" src="assets/img/confused.svg" alt="" />
+            </div>
+        </section>
+        <section class="wini center">
+            <div class="text">
+                <h1>Bom... Até aqui, temos os conceitos relacionados ao primeiro pilar (Abstração)!</h1>
+            </div>
+        </section>
+        <section>
+            <h1>
+                Quero escrever em PHP... E aí?
+            </h1>
+            <p>
+                Então... Os conceitos fundamentais já foram apresentados, e a sintaxe mais básica, extraida de um aquivo user.php, segue abaixo:
+            </p>
+            <div class="code-block">
+                <code>&lt?php</code>
+                <code><span>....</span>class User {</code>
+                <code><span>........</span>//Propriedades</code>
+                <code><span>........</span>public $name;</code>
+                <code><span>........</span>public $email;</code>
+                <code><span>........</span>public $password;</code>
+                <code><span>.</code>
+                <code><span>........</span>//Método Construtor</code>
+                <code><span>........</span>function __construct() {</code>
+                <code><span>............</span>$this->password = '123456';</code>
+                <code><span>........</span>}</code>
+                <code><span>.</code>
+                <code><span>........</span>//Método do objeto</code>
+                <code><span>........</span>public function setName($name) {</code>
+                <code><span>............</span>$this->name = $name;</code>
+                <code><span>........</span>}</code>
+                <code><span>.</code>
+                <code><span>........</span>//Método da classe</code>
+                <code><span>........</span>public static function seyHello($name) {</code>
+                <code><span>............</span>echo 'Olá, '.$name;</code>
+                <code><span>........</span>}</code>
+                <code><span>....</span>}</code>
+                <code>?&gt</code>
+            </div>
+            <h4>Tá viajando? E esse <b>Construtor</b> aí?</h4>
+            <p>
+                Hehe... Construtores são métodos especiais, que são chamados automaticamente quando objetos são criados. É garantido que o código do construtor vai ser executado antes de qualquer outro código em outros métodos.
+            </p>
+            <p>
+                Construtores são particularmente úteis para inicializar atributos da classe, garantindo que, quando métodos desses objetos forem chamados, os atributos contenham valores específicos.
+            </p>
+            <h4><b>E como que eu crio objetos?</b></h4>
+            <p>
+                É fácil! A sintaxe é a seguinte:
+            </p>
+            <div class="code-block">
+                <code>&lt?php $user = new User(); ?></code>
+            </div>
+            <p>
+                E pra usar um método do objeto <code>$user:</code>
+            </p>
+            <div class="code-block">
+                <code>&lt?php $user->setName('JP'); ?></code>
+            </div>
+            <p>
+                Tem também os métodos que não estão diretamente ligados ao objeto, os métodos estáticos, ou métodos da classe. Esses você chama assim:
+            </p>
+            <div class="code-block">
+                <code>&lt?php User::sayHello('JP'); ?></code>
+            </div>
+        </section>
+        <section class="blue center">
+            <div class="text">
+                <h1>
+                    E aí, a introdução a POO é isso aí.
+                </h1>
+                <p>
+                    Você pode ver a <a style="color:#000" href="https://php.net" target="_blank">documentação completa do PHP aqui</a>.
+                </p>
+                <p>
+                    A sequência desse guia é o guia de CRUD. Você já ouviu falar nisso?
+                </p>
+            </div>
+            <div class="image">
+                <img src="assets/img/queen.png" alt="" />
+            </div>
+        </section>
+        <footer>
+            <p>
+                © InfoJr UFBA - 2016
+            </p>
+        </footer>
+    </body>
+</html>
