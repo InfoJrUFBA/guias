@@ -1,0 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Catamaran:400,500,300,100,600,700,200,800);
+
+/* Helpers  */
+@import "helpers/mixins.scss";
+@import "helpers/extends.scss";
+
+/* LAYOUTS - Page layout styles */
+@import "layout/base.scss";
+@import "layout/footer.scss";
+@import "layout/header.scss";
+@import "layout/typography.scss";
+
+/* COMPONENTS */
+@import "components/buttons.scss";
+@import "components/colors.scss";
+@import "components/tags.scss";
+
+/* PAGES - Individual styles */
+@import "pages/infojr.scss";
+@import "pages/mej.scss";
+@import "pages/management.scss";

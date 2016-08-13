@@ -1,0 +1,39 @@
+.green {
+    @include coloredElement(#8BC34A);
+}
+
+.dark-blue {
+    @include coloredElement(#00838F);
+}
+
+.blue {
+    @include coloredElement(#2196F3);
+}
+
+.red {
+    @include coloredElement(#F44336);
+}
+
+.deed-purple {
+    @include coloredElement(#6024C7);
+}
+
+.pink {
+    @include coloredElement(#e91e63);
+}
+
+.grey {
+    @include coloredElement(#E3E4E6, #E3E4E6, #333);
+}
+
+.sass-pink {
+    @include coloredElement(#CF649A);
+}
+
+.border-sass-pink {
+    @include coloredElement(#FFF, #CF649A, #FFF);
+}
+
+.mysql-blue{
+    @include coloredElement(#5382A1);
+}
