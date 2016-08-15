@@ -87,11 +87,48 @@
                     Não, jovem... Entidade aqui é qualquer coisa, concreta ou abstrata, <b>abstraída</b> do mundo real e modelada em forma de tabela para guardar informações no banco de dados.
                 </p>
                 <p>
-                    Conseguiu imaginar? Óh, os 40 estudantes de uma sala de aula são diferentes entre si por inúmeros fatores, mas podemos abstraí-los em uma tabela a partir das características em comum, a depender do contexto. Quer ver? Espia: Todo estudante tem um número de matrícula, um nome, data de nascimento e um ano de entrada, por exemplo. Nesse caso, a nossa entidade se chamaria estudantes (students), esse seria o nome da tabela. Cada característica em comum seria uma coluna, e cada aluno seria uma linha.
+                    Conseguiu imaginar? Óh, os 40 estudantes de uma sala de aula são diferentes entre si por inúmeros fatores, mas podemos abstraí-los em uma tabela a partir das características em comum, a depender do contexto. Quer ver? Espia: Todo estudante tem um número de matrícula, um nome, data de nascimento e um ano de entrada, por exemplo. Nesse caso, a nossa entidade se chamaria estudantes (students), esse seria o nome da tabela. Cada característica em comum seria uma coluna, e cada aluno seria uma linha com uma identificação única.
                 </p>
             </div>
         </section>
-        <section class="wini center">
+        <section class="wini">
+            <div class="text">
+                <h1>Peraê, rapaz!</h1>
+                <h2>Que identificação única é essa que tu falou aí?</h2>
+                <p>
+                    Bom, essa identificação única é a famosa e renomada <b>PRIMARY KEY</b>. A PK é um campo (coluna) que identifica unicamente cada registro (linha) da tabela, e que <b>não pode ser nulo</b>.
+                </p>
+                <p>
+                    Na tabela abaixo, o campo id seria um excelente candidato a Primary Key, pois identifica unicamente e numericamente cada linha. Perceba que isso permite que tenhamos duas "pessoas" com o mesmo nome na nossa tabela, e mesmo assim saibamos quem é quem.
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>id</td>
+                            <td>name</td>
+                            <td>department</td>
+                            <td>role</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>JP Rodrigues</td>
+                            <td>Marketing</td>
+                            <td>Diretor</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>JP Rodrigues</td>
+                            <td>Marketing</td>
+                            <td>Trainee</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="image">
+                <img src="assets/img/key.png" alt="" />
+            </div>
         </section>
         <section>
         </section>
