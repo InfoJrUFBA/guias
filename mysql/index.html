@@ -131,6 +131,24 @@
             </div>
         </section>
         <section>
+            <h1>Mas isso não é tudo!</h1>
+            <p>
+                Uma das coisas mais importantes que vamos falar aqui é do relacionamento entre tabelas.
+            </p>
+            <p>
+                <a href="https://www.youtube.com/watch?v=tKShRPNnmvI">É... isso mesmo que você OUviu!</a> Já sabemos que um banco de dados é composto por diversas tabelas. Sei lá: Clientes, Produtos, Pedidos, Detalhes do Pedido, etc. Beleza que as informações estarão separadas em cada uma das Tabelas, o lance é que na prática devem existir relacionamentos entre as tabelas.
+            </p>
+            <p>
+                Se ligue: Um Pedido é feito por um Cliente e neste Pedido podem existir diversos itens, itens que são gravados na tabela Detalhes do Pedido. Além disso, cada Pedido possui um número único (Código do pedido), mas um mesmo Cliente pode fazer diversos pedidos e assim por diante. É dessa forma que as relações acontecem e, em se falando de banco de dados, podemos representá-las das seguintes maneiras:
+            </p>
+            <ul>
+                <li><b>1 pra 1:</b> Vamos supor que tivéssemos um sistema no qual seria necessário uma tabela com todos os presidentes que já tivemos, e uma tabela onde guardaríamos todos os vice-presidentes. Relacionaríamos cada vice-presidente com um presidente. </li>
+                <li><b>1 pra muitos (1 pra n):</b> Esta relação pode ser vista em nossa divisão de diretorias. Cada diretoria possui muitos membros, mas um membro não pode fazer parte de mais de uma diretoria. Neste caso, na tabela de membros, teríamos um campo onde guardaríamos a chave primária da diretoria a qual cada membro pertence.</li>
+                <li><b>Muitos pra muitos (n pra n):</b> A daqui a gente vê na divisão das equipes de projeto. Cada projeto pode ter mais de um membro envolvido, e cada membro pode fazer parte de mais de um projeto. Neste caso, teríamos, além das tabelas de membros e projetos, uma terceira tabela que guardaria a chave primária do membro e a chave primária do projeto ao qual ele fez parte.</li>
+            </ul>
+            <p>
+                Quando a chave primária de uma tabela A é informada em uma tabela B para estabelecer o relacionamento de dados, passa a se chamar chave estrangeira para a tabela A em B.
+            </p>
         </section>
         <section class="blue center">
             <div class="text">
