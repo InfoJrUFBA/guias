@@ -620,6 +620,14 @@ p {
   background-color: #FFF;
   color: #333; }
 
+.text table, section .text-right table {
+  border: 1px solid #FFF;
+  border-collapse: collapse;
+  width: 100%; }
+  .text table td, section .text-right table td {
+    border: 1px solid #FFF;
+    padding: 10px 15px; }
+
 /* PAGES - Individual styles */
 .reduces {
   max-height: 300px; }
