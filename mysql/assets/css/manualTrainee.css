@@ -121,6 +121,9 @@ section {
   border: 1px solid #FFF;
   border-radius: 6px; }
 
+video {
+  width: 100%; }
+
 .code-block {
   background-color: #282c34;
   border-radius: 5px;
@@ -624,6 +627,10 @@ p {
   border: 1px solid #FFF;
   border-collapse: collapse;
   width: 100%; }
+  .text table.bg-white, section .text-right table.bg-white {
+    border-color: #333; }
+    .text table.bg-white td, section .text-right table.bg-white td {
+      border-color: #333; }
   .text table td, section .text-right table td {
     border: 1px solid #FFF;
     padding: 10px 15px; }

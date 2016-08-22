@@ -150,13 +150,106 @@
                 Quando a chave primária de uma tabela A é informada em uma tabela B para estabelecer o relacionamento de dados, passa a se chamar chave estrangeira para a tabela A em B.
             </p>
         </section>
+        <section class="green">
+            <h1>E como que eu crio essas tabelas aí?</h1>
+            <p>
+                As tabelas e todas as outras coisas podem ser criadas por meio de código MySQL. Contudo, iremos utilizar uma ferramenta visual unificada para arquitetos de banco de dados e desenvolvedores, chamada Mysql Workbanch. O que o Workbanch vai fazer é permitir que você "desenhe" suas tabelas e relacionamentos com "clique e arraste", e depois transformará tudo em código.
+            </p>
+            <div class="code-block">
+                <code>$sudo apt-get install mysql-workbench</code>
+            </div>
+            <p>
+                Estando o Workbanch instalado, abra-o e tecle <b>ctrl + N</b>.
+            </p>
+            <p>
+                Abaixo segue um vídeo onde modelamos um banco de dados conforme sugerido pela explicação das relações 1 pra n e n pra n.
+            </p>
+            <video src="assets/video/db1.webm" controls poster="posterimage.jpg"></video>
+            <p>
+                Tabelas modeladas, <b>shift + ctrl + G</b> para gerar o seu código MySQL.
+            </p>
+            <p>
+                Vamos a alguns detalhes não explicados anteriormente.
+            </p>
+            <ul>
+                <li>PK = Primary Key = Chave Primária - Geralmente marcamos esta opção para as colunas 'id'.</li>
+                <li>NN = NOT NULL = NÃO NULO - Esta opção deve ser marcadas para as colunas que tem preenchimento obrigatório.</li>
+                <li>UQ = UNIQUE = ÚNICO - Se as entradas desta coluna não podem se repetir, marque esta opção.</li>
+                <li>AI = AUTO INCREMENTAL - O valor da coluna que for marcada com AI irá ser incrementado automaticamente a cada nova linha inserida.</li>
+            </ul>
+        </section>
+        <section>
+            <div class="text">
+                <h1>Tipos de dados</h1>
+                <p>
+                    O MySQL possui vários tipos de dados. Listamos algums bem importantes:
+                </p>
+                <ul>
+                    <li>Inteiros
+                        <table class="bg-white">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Storage</th>
+                                <th>Minimum Value</th>
+                                <th>Maximum Value</th>
+                            </tr><tr>
+                                <th>&nbsp;</th>
+                                <th>(Bytes)</th>
+                                <th>(Signed/Unsigned)</th>
+                                <th>(Signed/Unsigned)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>INT</code></td>
+                                <td>4</td>
+                                <td><code>-2147483648</code></td>
+                                <td><code>2147483647</code></td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td><code>0</code></td>
+                                <td><code>4294967295</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>BIGINT</code></td>
+                                <td>8</td>
+                                <td><code>-9223372036854775808</code></td>
+                                <td><code>9223372036854775807</code></td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td><code>0</code></td>
+                                <td><code>18446744073709551615</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </li>
+                    <br>
+                    <li>Strings
+                        <p><b>VARCHAR(5)</b> - O tamanho do texto pode ser qualquer valor entre 0 e 255 caracteres, inclusive.</p>
+                        <p><b>TEXT</b> - Texto com tamanho máximo de 65535 (2^16 - 1) caracteres</p>
+                    </li>
+                    <li><b>DATE</b> - Uma data. A faixa suportada é entre '1000-01-01' e '9999-12-31'. MySQL mostra valores DATE no formato 'AAAA-MM-DD', mas permite que você atribua valores a campos DATE utilizando tanto strings quanto números. </li>
+                </ul>
+            </div>
+        </section>
         <section class="blue center">
             <div class="text">
                 <h1>
                     E aí, é isso aí!.
                 </h1>
                 <p>
-                    Você pode ver a <a style="color:#000" href="https://php.net" target="_blank">documentação completa do MySQL aqui</a>.
+                    Bom... Isso não é tudo sobre MySQL, não é tudo sobre Banco de Dados, e não é tudo sobre o Workbench. Procure tirar dúvidas com seu mentor, com outras pessoas na Info, com outros trainees, em livros, na internet, etc.
+                </p>
+                <p>
+                    O mais importante deste guia é que você absorva os conceitos que foram apresentados.
+                </p>
+                <p>
+                    Você pode ver a <a style="color:#000" href="https://dev.mysql.com/doc/refman/5.5/en/" target="_blank">documentação completa do MySQL aqui</a>.
                 </p>
                 <p>
                     A sequência desse guia é o guia de POO (1). Você já ouviu falar nisso?
