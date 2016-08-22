@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="assets/css/manualTrainee.css">
+        <link rel="icon" type="image/png" href="assets/img/infojr-ico.svg">
+        <title>Guias - MySQL</title>
+    </head>
+    <body>
+        <section class="center full dark-blue">
+            <div class="image">
+                <img src="assets/img/crud.svg" alt="" />
+                <h1>Operações básicas em bancos de dados</h1>
+            </div>
+        </section>
+        <section>
+            <div class="text">
+                <h1>Venha cá véi, que onda é essa?</h1>
+                <p>
+                    CRUD é uma sigla/apelido para Create, Read, Update and Delete, em pt-br seria Criar, Ler, Atualizar, Deletar (CLAD - risos). Antes que você me pergunte, estas são as 4 operações básicas quando o assunto é BANCO DE DADOS.
+                </p>
+            </div>
+            <div class="image">
+                <img class="reduces" src="assets/img/crud.png" alt="" />
+            </div>
+        </section>
+        <section class="green">
+            <div>
+                <h1>A ideia que segue, é cheque.</h1>
+                <p>
+                    Você, enquanto modelava seu banco de dados, aprendeu o que era ENTIDADE. Se não ouviu, ou não lembra, saiba que uma entidade é uma representação de um conjunto de informações sobre determinado conceito do sistema, conceito esse que pode ser qualquer coisa, concreta ou abstrata, abstraída do mundo real e modelada em forma de tabela para guardar informações no banco de dados. Não entendeu não foi véi? Se ligue:
+                </p>
+                <ul>
+                    <li>
+                        Digamos que eu vá precisar de usuários no meu sistema, cada usuário vai ter que ter um nome, um e-mail, uma senha (um conjunto de informações). Então, ora veja só, o usuário é uma entidade.
+                    </li>
+                    <li>
+                        Digamos ainda que o sistema se chama Biblioteca… Toda biblioteca tem livros, cada livro tem um título, um autor, um ano de edição, uma editora e afins (um conjunto de informações). Vai me dizer que o livro não é uma entidade? Claro que é.
+                    </li>
+                </ul>
+                <p>
+                    Se você for esperto, jovem, vai perceber que o sistema deve permitir que eu adicione um livro, que eu possa visualizar os livros cadastrados, que eu edite as informações de um livro ou que eu delete livros. Isso não te lembra nada? Meu amigo, isso aí é o CRUD. Durma com um barulho desses!
+                </p>
+                <ul>
+                    <li>Adicionar um livro - > Create</li>
+                    <li>Visualizar os livros - > Read</li>
+                    <li>Editar um livro - > Update</li>
+                    <li>Deletar livros - > Delete</li>
+                </ul>
+                <p>Pois bem, o conceito está aí, e convenhamos, é bastante simples.</p>
+            </div>
+        </section>
+        <section>
+            <h1>Tudo certo?</h1>
+            <p>
+                Agora que 0 CRUD não é mais um mistério, vamos apresentá-lo aos 4 comandos MySQL referentes a ele.
+            </p>
+            <h3>CREATE</h3>
+            <p>
+                Quando se quer adicionar algo (uma ou mais linhas) a uma tabela MySQL, utiliza-se o comando INSERT. A sintaxe básica é:
+            </p>
+            <div class="code-block">
+                <code>
+                    INSERT INTO nomedatabela(campo) VALUES (valores);
+                </code>
+            </div>
+            <p>
+                Vejamos um exemplo:
+            </p>
+            <div class="code-block">
+                <code>
+                    INSERT INTO `users`(`name`, `email`, `password`) VALUES('Copque', 'victorcopque@infojr.com.br', '2bd9f2438a1e5a214cad43c01cf14bdb');
+                </code>
+            </div>
+            <p>
+                Perceba que utilizamos ` para nos referir a tabelas e colunas de tabelas, e ' para nos referir às strings que serão inseridas.
+            </p>
+        </section>
+        <section class="mysql-blue">
+            <h3>READ</h3>
+            <p>
+                Quando se quer ler, puxar, ver, trazer, mostrar alguma informação do banco de dados, em MySQL, utiliza-se o SELECT. A sintaxe básica é:
+            </p>
+            <div class="code-block">
+                <code>
+                    SELECT `campo` FROM `tabela`;
+                </code>
+            </div>
+            <p>Vejamos um exemplo:</p>
+            <div class="code-block">
+                <code>
+                    SELECT `name` FROM `users`;
+                </code>
+            </div>
+            <p>
+                Podemos ser mais específicos em nossa busca dizendo por exemplo qual o máximo de usuários que queremos:
+            </p>
+            <div class="code-block">
+                <code>
+                    SELECT `name` FROM `users` LIMIT 5;
+                </code>
+            </div>
+            <p>Ou ainda mais, dizendo o valor que determinado campo deve ter:</p>
+            <div class="code-block">
+                <code>
+                    SELECT `name` FROM `users` WHERE `email`= 'victorcopque@infojr.com.br';
+                </code>
+            </div>
+            <p>Ou ainda mais:</p>
+            <div class="code-block">
+                <code>
+                    SELECT `name` FROM `users` WHERE `email`= 'victorcopque@infojr.com.br' LIMIT 1;
+                </code>
+            </div>
+        </section>
+        <section>
+            <h3>UPDATE</h3>
+            <p>
+                Quando se quer atualizar, editar algo (uma ou mais linhas) em uma tabela MySQL, utiliza-se o comando UPDATE. A sintaxe básica é:
+            </p>
+            <div class="code-block">
+                <code>
+                    UPDATE nomedatabela SET `campo`='valor' WHERE condição;
+                </code>
+            </div>
+            <p>Vejamos um exemplo:</p>
+            <div class="code-block">
+                <code>
+                    UPDATE `users` SET `name`='Victor Copque' WHERE `email`= 'victorcopque@infojr.com.br';
+                </code>
+            </div>
+        </section>
+        <section class="dark-blue">
+            <h3>DELETE</h3>
+            <p>
+                Quando se quer deletar, remover, excluir algo (uma ou mais linhas) de uma tabela MySQL, utiliza-se o comando DELETE. A sintaxe básica é:
+            </p>
+            <div class="code-block">
+                <code>
+                    DELETE FROM `tabela`;
+                </code>
+            </div>
+            <p>Vejamos um exemplo:</p>
+            <div class="code-block">
+                <code>
+                    DELETE FROM `users`;
+                </code>
+            </div>
+            <p>
+                Podemos ser mais específicos da mesma forma que vimos no SELECT.
+            </p>
+        </section>
+
+        <section class="blue center">
+            <div class="text">
+                <h1>
+                    E aí, é isso aí!.
+                </h1>
+                <p>
+                    O mais importante deste guia é que você absorva os conceitos que foram apresentados.
+                </p>
+                <p>
+                    Você pode ver a <a style="color:#000" href="https://dev.mysql.com/doc/refman/5.5/en/" target="_blank">documentação completa do MySQL aqui</a>.
+                </p>
+            </div>
+            <div class="image">
+                <img src="assets/img/queen.png" alt="" />
+            </div>
+        </section>
+        <footer>
+            <p>
+                © InfoJr UFBA - 2016
+            </p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,131 @@
+*
+    box-sizing: border-box
+    -moz-box-sizing: border-box
+    -webkit-box-sizing: border-box
+
+html, body
+    width: 100%
+    height: 100%
+    margin: 0
+    padding: 0
+    color: #333
+
+body
+    font-family: "Catamaran", Helvetica, Arial, sans-serif
+    font-size: 16px
+    line-height: 1.42857
+
+textarea
+    resize: none
+
+ul
+    margin: 0
+
+section
+    width: 100%
+    padding: 50px 7%
+
+    &:after
+        clear: both
+        content: ""
+        display: block
+
+    .text
+        width: 60%
+        display: inline-block
+        vertical-align: middle
+
+        .image
+            display: inline-block
+            vertical-align: middle
+
+    .text-right
+        @extend .text
+        padding-left: 30px
+
+    .image
+        width: 39%
+        display: inline-block
+        vertical-align: middle
+        text-align: center
+        padding: 0 15px
+
+        figure
+            margin: 0
+
+        svg, img
+            max-width: 100%
+
+    @media (max-width: 768px)
+        .text
+            width: 100%
+            text-align: justify
+            padding: 0
+
+        .image
+            width: 100%
+
+            svg, img
+                max-width: 50%
+
+
+
+@media screen and (max-width: 520px)
+    section
+        overflow: hidden
+        padding: 50px 3% !important
+
+.bg
+    background-image: url("../img/app.png")
+
+    h1, p, b
+        background-color: #FFF
+
+.center
+    text-align: center
+
+.full
+    min-height: 100%
+
+.justify
+    text-align: justify
+    background-color: #FFF
+    padding: 0 15px
+
+.align-top
+    vertical-align: top!important
+
+.w-box
+    padding: 30px
+    width: 80%!important
+    border: 1px solid #FFF
+    border-radius: 6px
+
+video
+    width: 100%
+
+.code-block
+    background-color: #282c34
+    border-radius: 5px
+    color: #abb2bf
+    display: block
+    margin: 15px 0
+    padding: 15px
+    text-align: left
+
+    code
+        display: block
+
+        span
+            color: #3F4553
+
+.sxs
+    display: none !important
+
+@media (max-width: 520px)
+    .sxs
+        display: inline-block !important
+
+@media (max-width: 520px)
+    .hxs
+        display: none !important
