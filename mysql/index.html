@@ -175,6 +175,9 @@
                 <li>PK = Primary Key = Chave Primária - Geralmente marcamos esta opção para as colunas 'id'.</li>
                 <li>NN = NOT NULL = NÃO NULO - Esta opção deve ser marcadas para as colunas que tem preenchimento obrigatório.</li>
                 <li>UQ = UNIQUE = ÚNICO - Se as entradas desta coluna não podem se repetir, marque esta opção.</li>
+                <li>BIN = BINNARY = BINÁRIO - Guarda os dados como strings binárias. Comparação e ordenação são feitas com base no valor númerico dos bytes registrados em cada linha.</li>
+                <li>UN = UNSIGN = SEM SINAL - Os escopos numéricos geralmente são divididos entre números negativos e não-negativos. Colunas UN dedicam todo o seu espaço para números não-negativos. Então se o escopo é de -500 a 500, com UN vai de 0 a 1000, o espaço é o mesmo, mas passa a iniciar de 0.</li>
+                <li>ZF = ZERO FILLED = ZERO A ESQUERDA - Completa o tamanho reservado para a coluna com zeros à esquerda. Ex: INT(4) -> 1 = 0001.</li>
                 <li>AI = AUTO INCREMENTAL - O valor da coluna que for marcada com AI irá ser incrementado automaticamente a cada nova linha inserida.</li>
             </ul>
         </section>
