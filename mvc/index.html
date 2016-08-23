@@ -43,9 +43,76 @@
                 <p>
                     A model é a camada que vai interagir com o Banco de Dados. É nela que vamos aplicar o conhecimento que obtivemos no <a href="https://infojrufba.github.io/g/crud/">guia de CRUD</a>. Na model a gente vai lançar as inserções, requisições, atualizações, deleções, desde as declaroções mais básicas até as declarações mais complexas, usando PHP & MySQL.
                 </p>
+                <p>
+                    Você lembra da definição de modelo que demos lá no <a href="https://infojrufba.github.io/g/poo">guia de POO?</a> Pois é. Os nossos modelos serão naquele esquema.
+                </p>
             </div>
         </section>
-
+        <section class="green">
+            <h1>Então...</h1>
+            <p>
+                Para facilitar o desenvolvimento e a manutenção dos nossos projetos, vamos segmentar nosso MVC em pastas, como segue:
+            </p>
+            <div class="code-block">
+                <code>.</code>
+                <code>├── assets</code>
+                <code>│<span>...</span>├── css</code>
+                <code>│<span>...</span>├── img</code>
+                <code>│<span>...</span>└── js</code>
+                <code style="color: #E97046">├── controllers</code>
+                <code>├── helpers</code>
+                <code style="color: #E97046">├── models</code>
+                <code>├── vendor</code>
+                <code style="color: #E97046">└── views</code>
+            </div>
+            <h3>PERAÊ... Tem pasta demais aí.</h3>
+            <p>
+                É que aí tem a estrutura de pastas de todo um projeto, e não utilizamos somente o que o MVC pede. Cada pasta extra tem uma função complementar à estrutura do MVC.
+            </p>
+            <ul>
+                <li>assets: Toda a estilização do projeto (css e js) e os arquivos de imagem.</li>
+                <li>helpers: São arquivos que auxiliam as controllers em funcionalidades mais gerais do que específicas, como: tradutores</li>
+                <li>vendor: Todo e qualquer código externo (que não foi desenvolvido pela equipe do projeto).</li>
+            </ul>
+        </section>
+        <section>
+            <h1>Mãos à obra!</h1>
+            <p>
+                Vamos construir aqui uma model, uma controller e uma view para inserir usuários na tabela users num banco de dados. Preste atenção em tudo. Explicaremos a maioria das coisas, mas qualquer dúvida, não se acanhe em perguntar a seu mentor ou outro Infobrother.
+            </p>
+        </section>
+        <section class="dark-blue">
+            <h3>Model -> models/user.php</h3>
+            <div class="code-block">
+                <code>&lt?php </code>
+                <code>class User {</code>
+                <code><span>....</span>private $name;</code>
+                <code><span>....</span>private $email;</code>
+                <code><span>....</span>private $password;</code>
+                <br>
+                <code><span>....</span>function __construct($attributes) {</code>
+                <code><span>........</span>$this->name = (empty($attributes['name']))? null: $attributes['name'];</code>
+                <code><span>........</span>$this->email = (empty($attributes['email']))? null: $attributes['email'];</code>
+                <code><span>........</span>$this->password = (empty($attributes['password']))? null: $attributes['password'];</code>
+                <code><span>....</span>}</code>
+                <code><span></span>}</code>
+                <code>?&gt </code>
+            </div>
+        </section>
+        <section>
+            <h3>Controller -> controllers/userController.php</h3>
+            <div class="code-block">
+                <code>&lt?php </code>
+                <code>include('../models/user.php');</code>
+                <br>
+                <code>class UserController{</code>
+                <code><span>....</span>public static function insert() {</code>
+                <code><span>........</span>$user = new User($_POST['user']);</code>
+                <code><span>....</span>}</code>
+                <code>}</code>
+                <code>?&gt </code>
+            </div>
+        </section>
         <section class="blue center">
             <div class="text">
                 <h1>
