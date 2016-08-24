@@ -84,20 +84,88 @@
         <section class="dark-blue">
             <h3>Model -> models/user.php</h3>
             <div class="code-block">
-                <code>&lt?php </code>
-                <code>class User {</code>
-                <code><span>....</span>private $name;</code>
-                <code><span>....</span>private $email;</code>
-                <code><span>....</span>private $password;</code>
-                <br>
-                <code><span>....</span>function __construct($attributes) {</code>
-                <code><span>........</span>$this->name = (empty($attributes['name']))? null: $attributes['name'];</code>
-                <code><span>........</span>$this->email = (empty($attributes['email']))? null: $attributes['email'];</code>
-                <code><span>........</span>$this->password = (empty($attributes['password']))? null: $attributes['password'];</code>
-                <code><span>....</span>}</code>
-                <code><span></span>}</code>
-                <code>?&gt </code>
+                <code><span> 1</span> &lt?php </code>
+                <code><span> 2</span> class User extends Connect {</code>
+                <code><span> 3 ....</span>private $id;</code>
+                <code><span> 4 ....</span>private $name;</code>
+                <code><span> 5 ....</span>private $email;</code>
+                <code><span> 6 ....</span>private $password;</code>
+                <code><span> 7</span></code>
+                <code><span>8 ....</span>function __construct($attributes) {</code>
+                <code><span>9 ........</span>$this->id = (empty($attributes['id']))? null: $attributes['id'];</code>
+                <code><span>10........</span>$this->name = (empty($attributes['name']))? null: $attributes['name'];</code>
+                <code><span>11........</span>$this->email = (empty($attributes['email']))? null: $attributes['email'];</code>
+                <code><span>12........</span>$this->password = (empty($attributes['password']))? null: $attributes['password'];</code>
+                <code><span>13....</span>}</code>
+                <code><span>14</span></code>
+                <code><span>15....</span>public function insert() {</code>
+                <code><span>16........</span>$connect = self::start();</code>
+                <code><span>17........</span>$stm = $connect->prepare("INSERT INTO users(name, email, password) VALUES (:name, :email, :password)");</code>
+                <code><span>18........</span>$stm->BindValue(":name", $this->name, PDO::PARAM_STR);</code>
+                <code><span>19........</span>$stm->BindValue(":email", $this->email, PDO::PARAM_STR);</code>
+                <code><span>20........</span>$stm->BindValue(":password", $this->password, PDO::PARAM_STR);</code>
+                <code><span>21........</span>return $stm->execute();</code>
+                <code><span>22....</span>}</code>
+                <code><span>23</span>}</code>
+                <code><span>24</span>?&gt </code>
             </div>
+            <h4>PARÔ, 2 ALTOS! Quié isso?</h4>
+            <p>
+                Lembre aí dos Guias de POO e de MySQL. Lembrou? Prooonto.
+            </p>
+            <p>
+                Então... A Model é a construção da nossa entidade, e é a partir dela que vamos criar nossos objetos.
+            </p>
+            <p>
+                O que vemos nas linhas de 3 à 6 são os atributos da nossa classe, que receberão exatamente os mesmos nomes das colunas da tabela correspondente no Banco de Dados.
+            </p>
+            <p>
+                Da linha 8 à 13 temos o nosso construtor. E perceba que entre os parenteses do construtor, temos uma variável que, nessa situação, chamaremos de parâmetro. Isso significa que o construtor está esperando que você envie informações pra ele. Informações essas, que deverão vir na forma de um array associativo, onde cada posição do array se refere a um dos nossos atributos.
+            </p>
+            <p>
+                No "recheio" do construtor temos 4 linhas muito semelhantes. Deixa eu explicar o que elas fazem. Vou pegar como exemplo a linha 9.
+            </p>
+            <div class="code-block">
+                <code><span>9 ........</span>$this<span style="color: #F44336">-></span>id = (<span style="color: #2196F3">empty</span>($attributes[<span style="color: #FFA518">'id'</span>]))? <span style="color: #A33239">null</span>: $attributes[<span style="color: #FFA518">'id'</span>];</code>
+            </div>
+            <p>
+                O primeiro lance é esse <code>$this</code> aí. O $this é uma pseudo-variável que está disponível quando um método é chamado a partir de um contexto de objeto. $this é uma referência ao objeto criado. Enfim, quando você instancia, cria, produz, um novo objeto, você tem acesso ao $this.
+            </p>
+            <p>
+                E daí que nessa linha a gente usa <code>$this->id</code>, ou seja, o <code>id</code> de um objeto daquela classe. E aí com o '<code>=</code>' você diz que aquele <code>id</code> vai ser alguma coisa.
+            </p>
+            <p>
+                MAS vai ser o quê? Vai ser o resultado dessa novidade da tecnologia mundial que vem em seguida, que é o nosso operador ternário.
+            </p>
+            <p>
+                O operador ternário é a estrutura abaixo, que funciona como se fosse um <code>if {} else {}</code>.
+            </p>
+            <div class="code-block">
+                <code>
+                    (<span style="color: #2196F3">Minha_condição_é_verdade</span>)? <span style="color: #70A649">Se_for_Execute_isso</span>: <span style="color: #A33239">Se_não_for_Execute_isso</span>;
+                </code>
+            </div>
+            <p>
+                No nosso caso, a pergunta é: <code style="background-color: #282c34; padding: 5px;">(<span style="color: #2196F3">empty</span>($attributes[<span style="color: #FFA518">'id'</span>))?</code>
+            </p>
+            <p>
+                empty é uma função do próprio PHP que verifica se uma variável ou posição de array está VAZIA, NULA, ou SE NÃO ESTÁ SETADA.
+            </p>
+            <p>
+                Então ela tá verificando se a posição <code>id</code> do nosso array <code>$attributes</code> não existe ou se ela está vazia. Se isso for verdade, o <code>id</code> do nosso objeto vai ser <code>null</code>. Se isso não for verdade, o <code>id</code> do nosso objeto vai ser a posição <code>id</code> do nosso array <code>$attributes</code>. E aí, o restante é análogo.
+            </p>
+        </section>
+        <section>
+            <h3>A função insert()</h3>
+            <p>
+                Essa é a função que será responsável por inserir linhas na nossa tabela de usuários. Aqui eu quero que você lembre que cada objeto é ou será uma linha da nossa tabela de usuários, e que a model é a camada mais próxima do banco.
+            </p>
+            <p>
+                Na linha 16 a gente recebe na variável <code>$connect</code> um objeto PDO que é gerado após ser feita a conexão com o banco, mas calma aí que depois eu te explico.
+            </p>
+        </section>
+        <section>
+            <h1>AINDA INCOMPLETO! ESTÁ EM CONSTRUÇÃO</h1>
         </section>
         <section>
             <h3>Controller -> controllers/userController.php</h3>
@@ -105,7 +173,7 @@
                 <code>&lt?php </code>
                 <code>include('../models/user.php');</code>
                 <br>
-                <code>class UserController{</code>
+                <code>class UserController {</code>
                 <code><span>....</span>public static function insert() {</code>
                 <code><span>........</span>$user = new User($_POST['user']);</code>
                 <code><span>....</span>}</code>
