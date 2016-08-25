@@ -163,6 +163,24 @@
             <p>
                 Na linha 16 a gente recebe na variável <code>$connect</code> um objeto PDO que é gerado após ser feita a conexão com o banco, mas calma aí que depois eu te explico.
             </p>
+            <p>
+                Na linha 17, utilizamos o método <code>prepare</code> da classe <code>PDO</code>. O método <code>prepare</code> é utilizado com a ideia de apenas iniciar a query e aguardar pela inclusão de valores posteriormente.
+            </p>
+            <p>
+                No nosso caso, a query é um comando MySQL de inserção que, em português, está dizendo: "Insira nesta tabela, em cada coluna especificada, estas informações aqui." Se o servidor de banco de dados preparar o comunicado com êxito, o <code>prepare</code> retorna um objeto <code>PDOStatement</code> que é armazenado em <code>$stm</code>. Se o servidor de banco de dados não pôde se preparar com êxito, a declaração retorna <code>FALSE</code>.
+            </p>
+            <p>
+                O lance é que as informações que de fato serão inseridas ainda não estão associadas aos parâmetros passados em <code>VALUE()</code>. Até aqui você só disse onde você quer inserir (Na tabela tal, coluna tal), mas ainda não disse o quê.
+            </p>
+            <p>
+                Após o prepare, temos acesso ao método <code>BindValue</code> da classe <code>PDOStatement</code>. A função dele é vincular um valor a um parâmetro. No nosso caso, temos que o parâmetro <code>":name"</code> passa a ter o valor atual do nosso atributo <code>$name</code> (O <code>$this->name</code> do objeto atual). O <code>PDO::PARAM_</code> define o tipo de dado que está sendo passado, confira <a href="http://php.net/manual/pt_BR/pdo.constants.php" target="_blank">TODOS</a>.
+            </p>
+            <p>
+                Em seguida, temos mais um método do PDOStatement, o <code>execute</code>, que como o nome indica, executa um declaração preparada.
+            </p>
+            <p>
+                Caso você esteja fazendo uma função de seleção, você deve retornar o resultado do método <code>fetch</code> do <code>PDOStatement</code>. O método <code>fetch</code> retorna uma linha de um conjunto de resultados associado a um objeto <code>PDOStatement</code>. O <code>PDO::FETCH_</code> determina a forma como o fetch vai retornar o resultado, confira <a href="http://php.net/manual/pt_BR/pdostatement.fetch.php" target="_blank">TODAS</a>.
+            </p>
         </section>
         <section>
             <h1>AINDA INCOMPLETO! ESTÁ EM CONSTRUÇÃO</h1>
