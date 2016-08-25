@@ -161,7 +161,7 @@
                 Essa é a função que será responsável por inserir linhas na nossa tabela de usuários. Aqui eu quero que você lembre que cada objeto é ou será uma linha da nossa tabela de usuários, e que a model é a camada mais próxima do banco.
             </p>
             <p>
-                Na linha 16 a gente recebe na variável <code>$connect</code> um objeto PDO que é gerado após ser feita a conexão com o banco, mas calma aí que depois eu te explico.
+                Na linha 16 a gente recebe na variável <code>$connect</code> um objeto PDO que é gerado ao fazermos a conexão com o banco, mas calma aí que depois eu te explico.
             </p>
             <p>
                 Na linha 17, utilizamos o método <code>prepare</code> da classe <code>PDO</code>. O método <code>prepare</code> é utilizado com a ideia de apenas iniciar a query e aguardar pela inclusão de valores posteriormente.
@@ -180,6 +180,15 @@
             </p>
             <p>
                 Caso você esteja fazendo uma função de seleção, você deve retornar o resultado do método <code>fetch</code> do <code>PDOStatement</code>. O método <code>fetch</code> retorna uma linha de um conjunto de resultados associado a um objeto <code>PDOStatement</code>. O <code>PDO::FETCH_</code> determina a forma como o fetch vai retornar o resultado, confira <a href="http://php.net/manual/pt_BR/pdostatement.fetch.php" target="_blank">TODAS</a>.
+            </p>
+        </section>
+        <section class="mysql-blue">
+            <h3>Conectando com o banco de dados</h3>
+            <p>
+                Bom, como já dito, na linha 16 a gente recebe na variável <code>$connect</code> um objeto PDO que é gerado após ser feita a conexão com o banco. Mas o que é esse tal de PDO?
+            </p>
+            <p>
+                O PDO é uma classe nativa da linguagem PHP...
             </p>
         </section>
         <section>
