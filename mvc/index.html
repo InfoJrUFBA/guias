@@ -85,7 +85,7 @@
             <h3>Model -> models/user.php</h3>
             <div class="code-block">
                 <code><span> 1</span> &lt?php </code>
-                <code><span> 2</span> class User extends Connect {</code>
+                <code><span> 2</span> class User extends Connection {</code>
                 <code><span> 3 ....</span>private $id;</code>
                 <code><span> 4 ....</span>private $name;</code>
                 <code><span> 5 ....</span>private $email;</code>
@@ -198,7 +198,27 @@
                 A conexões com o banco serão estabelecidas através da criação de instâncias da classe base PDO. O construtor da PDO aceita parâmetros para especificar a fonte de banco de dados (conhecido como o DSN) e, opcionalmente, para o nome de usuário e senha (se houver). Como segue:
             </p>
             <div class="code-block">
-                <code><span>1 </span>$connect = <span style="color: #A33239">new</span> <span style="color: #">PDO</span>(<span style="color: #">'mysql:host=localhost;dbname=test'</span>, $user, $pass);</code>
+                <code><span>1 </span>$connect = <span style="color: #A33239">new</span> <span style="color: #2196F3">PDO</span>(<span style="color: #FFA518">'mysql:host=localhost;dbname=test'</span>, $user, $pass);</code>
+            </div>
+            <p>
+                Essa é a sintaxe, mas o ideal é que façamos em uma classe com uma função, para que possamos utilizar recursos de POO para facilitar nosso trabalho.
+            </p>
+            <div class="code-block">
+                <code><span> 1</span> &lt?php </code>
+                <code><span> 2</span> class Connection {</code>
+                <code><span> 3 ....</span>protected static function <span style="color: #2196F3">start</span>() {</code>
+                <code><span> 4 ........</span>$pdo = <span style="color: #A33239">new</span> <span style="color: #2196F3">PDO</span>(<span style="color: #FFA518">'mysql:host=localhost;dbname=test'</span>, "root", "");</code>
+                <code><span> 5 ........</span>$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);</code>
+                <code><span> 5 ........</span>return $pdo;</code>
+                <code><span> 6 ....</span>}</code>
+                <code><span> 6 </span>}</code>
+                <code><span> 6 </span>?&gt</code>
+            </div>
+            <p>
+                A partir daí, a conexão com o banco estará feita, e todas as nossas models passarão a herdar esta classe para que as nossas funções possam estabelecer conexão com o banco de dados. E esse estabelecer da conexão é o que vemos na linha 16 da nossa model:
+            </p>
+            <div class="code-block">
+                <code><span>16........</span>$connect = <span style="color: #A33239">self</span>::<span style="color: #2196F3">start</span>();</code>
             </div>
         </section>
         <section>
