@@ -17,11 +17,13 @@
         border-radius: 5px
         +transition()
 
-
-
         &:hover
             background-color: #E3E4E6
 
         img
-            max-height: 30px
+            height: 30px
             vertical-align: bottom
+            &.invert
+                -webkit-filter: invert(60%)
+                -o-filter: invert(60%)
+                filter: invert(60%)

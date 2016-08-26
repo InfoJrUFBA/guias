@@ -63,8 +63,12 @@
     .menu li:hover {
       background-color: #E3E4E6; }
     .menu li img {
-      max-height: 30px;
+      height: 30px;
       vertical-align: bottom; }
+      .menu li img.invert {
+        -webkit-filter: invert(60%);
+        -o-filter: invert(60%);
+        filter: invert(60%); }
 
 * {
   box-sizing: border-box;
