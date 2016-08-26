@@ -222,21 +222,31 @@
             </div>
         </section>
         <section>
-            <h1>AINDA INCOMPLETO! ESTÁ EM CONSTRUÇÃO</h1>
-        </section>
-        <section>
             <h3>Controller -> controllers/userController.php</h3>
             <div class="code-block">
-                <code>&lt?php </code>
-                <code>include('../models/user.php');</code>
-                <br>
-                <code>class UserController {</code>
-                <code><span>....</span>public static function insert() {</code>
-                <code><span>........</span>$user = new User($_POST['user']);</code>
-                <code><span>....</span>}</code>
-                <code>}</code>
+                <code><span>1 </span>&lt?php </code>
+                <code><span>2 </span>require('../models/user.php');</code>
+                <code><span>3 </span></code>
+                <code><span>4 </span>class UserController {</code>
+                <code><span><span>5 </span>....</span>public static function insert() {</code>
+                <code><span>6 ........</span>if (!empty($_POST['name']) && !empty($_POST['personalEmail']) && !empty($_POST['password'])) {</code>
+                <code><span>7 ............</span>$user = new User($_POST['user']);</code>
+                <code><span>8 ............</span>try {</code>
+                <code><span>9 ................</span>$user->insert();</code>
+                <code><span>10................</span>$_SESSION['msg'] = "Usuário criado com sucesso!";</code>
+                <code><span>11............</span>}</code>
+                <code><span>12............</span>catch(pdoexception $e) {</code>
+                <code><span>13................</span>$_SESSION['msg'] = 'fail">Erro.';</code>
+                <code><span>14............</span>}</code>
+                <code><span>15........</span>}</code>
+                <code><span>16........</span>header("location: ../views/home.php");</code>
+                <code><span>17....</span>}</code>
+                <code><span>18</span>}</code>
                 <code>?&gt </code>
             </div>
+        </section>
+        <section>
+            <h1>AINDA NÃO ESTÁ PRONTO!</h1>
         </section>
         <section class="blue center">
             <div class="text">
