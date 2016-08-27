@@ -180,7 +180,7 @@
             </p>
             <p>
                 <b>OBS.: </b>
-                Caso você esteja fazendo uma função de seleção, você deve retornar o resultado do método <code>fetch</code> do <code>PDOStatement</code>. O método <code>fetch</code> retorna uma linha de um conjunto de resultados associado a um objeto <code>PDOStatement</code>. O <code>PDO::FETCH_</code> determina a forma como o fetch vai retornar o resultado, confira <a href="http://php.net/manual/pt_BR/pdostatement.fetch.php" target="_blank">TODAS</a>.
+                Caso você esteja fazendo uma função de seleção, você deve retornar o resultado do método <code>fetch</code> do <code>PDOStatement</code>. O método <code>fetch</code> retorna uma linha de um conjunto de resultados associado a um objeto <code>PDOStatement</code>. O <code>PDO::FETCH_</code> determina a forma como o fetch vai retornar o resultado, confira <a href="http://php.net/manual/pt_BR/pdostatement.fetch.php" target="_blank">TODAS</a>. Converse com seu mentor sobre isso.
             </p>
         </section>
         <section class="mysql-blue">
@@ -220,17 +220,20 @@
             <div class="code-block">
                 <code><span>16........</span>$connect = <span style="color: #A33239">self</span>::<span style="color: #2196F3">start</span>();</code>
             </div>
+            <p>
+                Sim, o self é uma palavra reservada do PHP, que permite fazer referência a uma função que pertence à classe atual.
+            </p>
         </section>
         <section>
             <h3>Controller -> controllers/userController.php</h3>
             <div class="code-block">
                 <code><span>1 </span>&lt?php </code>
-                <code><span>2 </span>require('../models/user.php');</code>
+                <code><span>2 </span>require_once('../models/user.php');</code>
                 <code><span>3 </span></code>
                 <code><span>4 </span>class UserController {</code>
-                <code><span><span>5 </span>....</span>public static function insert() {</code>
+                <code><span><span>5 </span>....</span>public static function create() {</code>
                 <code><span>6 ........</span>if (!empty($_POST['name']) && !empty($_POST['personalEmail']) && !empty($_POST['password'])) {</code>
-                <code><span>7 ............</span>$user = new User($_POST['user']);</code>
+                <code><span>7 ............</span>$user = new User($_POST);</code>
                 <code><span>8 ............</span>try {</code>
                 <code><span>9 ................</span>$user->insert();</code>
                 <code><span>10................</span>$_SESSION['msg'] = "Usuário criado com sucesso!";</code>
@@ -242,11 +245,50 @@
                 <code><span>16........</span>header("location: ../views/home.php");</code>
                 <code><span>17....</span>}</code>
                 <code><span>18</span>}</code>
-                <code>?&gt </code>
+                <code><span>19</span></code>
+                <code><span>20</span>$postActions = array('create', 'update', 'changeStatus');</code>
+                <code><span>21</span>$getActions = array('delete');</code>
+                <code><span>22</span></code>
+                <code><span>23</span>if(isset($_POST['action']) && in_array($_POST['action'], $postActions)) {</code>
+                <code><span>24....</span>User::$_POST['action']();</code>
+                <code><span>25</span>}</code>
+                <code><span>26</span>elseif((key($_GET))!==null && in_array(key($_GET), $getActions)) {</code>
+                <code><span>27....</span>$command = key($_GET);</code>
+                <code><span>28....</span>User::$command();</code>
+                <code><span>29</span>} else {</code>
+                <code><span>30....</span>header('Location: ../');</code>
+                <code><span>31</span>}</code>
             </div>
-        </section>
-        <section>
-            <h1>AINDA NÃO ESTÁ PRONTO!</h1>
+            <p>
+                Essa é a nossa Controller. Ela é a ponte que interliga o nosso sistema.
+            </p>
+            <p>
+                Perceba que na controller não temos um construtor, e daí que todas as nossas funções serão funções de classe (funções estáticas). Ou seja, não trabalharemos com objetos ou instâncias da classe da controller.
+            </p>
+            <p>
+                Pois bem, vamos falar na nossa função <code>create()</code>.
+            </p>
+            <p>
+                Pra início de conversa, declaramos na linha 5 a função como static, ou seja, fizemos dela uma função de classe. A linha 6 é uma verificação importantíssima, que impede que todos os campos que queríamos que fossem preenchidos no nosso formulário de criação de usuários tenham algum conteúdo. Você lembra do método <code>empty()</code> que vimos na explicação da model, né? Pois é, se <code>empty()</code> verifica se um campo está vazio, <code>!empty()</code> verifica se um campo NÃO ESTÁ VAZIO. A exclamação é uma negação.
+            </p>
+            <p>
+                Na linha 7, criamos uma nova instância da classe User da model. Isso só foi possível porque na linha 2, fizemos a inclusão do arquivo da model no nosso arquivo da controller com a função <a href="http://php.net/manual/pt_BR/function.include.php" target="_blank">require_once</a> do PHP. Ao criar a nova instância, passamos como parâmetro a variável superglobal <code>$_POST</code>, que nada mais é do que um array associativo com todas as informações que vieram do nosso formulário via POST. É assim que o construtor da nossa model vai ter o que colocar em seus atributos. ;)
+            </p>
+            <p>
+                Das linhas 8 à 14, temos o bloco <code>try {} catch() {}</code>. Que, em palavras resumidas, vai tentar (try) executar algo, e em caso de falha, vai pegar (catch) a falha (<a href="http://php.net/manual/pt_BR/language.exceptions.php" target="_blank">Exceção</a>), que poderá ser exibida ou não.
+            </p>
+            <p>
+                Na linha 9, executamos a função <code>insert()</code> da nossa model User. Como ela está dentro do bloco <code>try</code>, o que estamos fazendo é tentando inserir algo no banco de dados. Se der certo, criamos e armazenamos uma mensagem de sucesso, e beleza. O lance é que se não der certo (linhas 12 - 14), capturamos o problema que deu, e criamos e armazenamos uma mensagem de erro, evitando que a aplicação quebre na face do usuário.
+            </p>
+            <p>
+                Na linha 16, utilizamos a função <code>header</code> do PHP para redirecionar para uma determinada página após executar a função insert.
+            </p>
+            <p>
+                Converse com seu mentor, ou tente entender como funciona o código da linha 20 em diante, sobre para que serve a $_SESSION, como utilizá-la, e como fazer com que as mensagens de sucesso e falha sejam exibidas na tela. Ah, e procure saber a diferença entre exceção e erro.
+            </p>
+            <p>
+                Fica a seu cargo desenvolver as funções para o restante do CRUD, além do formulário.
+            </p>
         </section>
         <section class="blue center">
             <div class="text">
@@ -257,7 +299,7 @@
                     O mais importante deste guia é que você absorva os conceitos que foram apresentados.
                 </p>
                 <p>
-                    Você pode ver a <a style="color:#000" href="https://dev.mysql.com/doc/refman/5.5/en/" target="_blank">documentação completa do MySQL aqui</a>.
+                    Você pode ver a <a style="color:#000" href="http://php.net/" target="_blank">documentação completa do PHP aqui</a>.
                 </p>
             </div>
             <div class="image">
