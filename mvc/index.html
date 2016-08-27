@@ -250,11 +250,11 @@
                 <code><span>21</span>$getActions = array('delete');</code>
                 <code><span>22</span></code>
                 <code><span>23</span>if(isset($_POST['action']) && in_array($_POST['action'], $postActions)) {</code>
-                <code><span>24....</span>User::$_POST['action']();</code>
+                <code><span>24....</span>UserController::$_POST['action']();</code>
                 <code><span>25</span>}</code>
                 <code><span>26</span>elseif((key($_GET))!==null && in_array(key($_GET), $getActions)) {</code>
                 <code><span>27....</span>$command = key($_GET);</code>
-                <code><span>28....</span>User::$command();</code>
+                <code><span>28....</span>UserController::$command();</code>
                 <code><span>29</span>} else {</code>
                 <code><span>30....</span>header('Location: ../');</code>
                 <code><span>31</span>}</code>
