@@ -1,7 +1,6 @@
-# GUIA RÁPIDO DE POO
+# GUIA RÁPIDO DE MySQL
 
-Programação Orientada a Objetos
+Modelagem de banco de dados MySQL com MySQL Workbanch
 
 - Autor: @jprodrigues70;
 - E-mail: joaorodrigues@infojr.com.br / 70jprodrigues@gmail.com
-- Bibliografia: SANTOS, Rafael - Introdução à programação Orientada a Objetos Usando JAVA.
