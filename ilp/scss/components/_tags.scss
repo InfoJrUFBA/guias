@@ -1,0 +1,43 @@
+.tag {
+    border-radius: 3px;
+    border: 1px solid;
+    cursor: pointer;
+    display: inline-block;
+    margin: 2.5px;
+    padding: 5px 10px;
+
+    &-blue {
+        @extend .tag;
+        @include coloredElement(#314F4F);
+        @include bounce(#FFF, bottom);
+    }
+
+    &-green {
+        @extend .tag;
+        @include coloredElement(#7CB124);
+        @include bounce(#FFF, right);
+    }
+
+    &-orange {
+        @extend .tag;
+        @include coloredElement(#EB891C);
+        @include bounce(#FFF, top);
+    }
+
+    &-red {
+        @extend .tag;
+        @include coloredElement(#FA7459);
+        @include bounce(#FFF);
+    }
+
+    &-blue {
+        @extend .tag;
+        @include coloredElement(#2196F3);
+        @include bounce(#FFF);
+    }
+}
+
+.active {
+    background-color: #FFF;
+    color: #333;
+}

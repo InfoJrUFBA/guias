@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="assets/css/manualTrainee.css">
+        <link rel="icon" type="image/png" href="assets/img/infojr-ico.svg">
+        <title>Guias - ILP</title>
+    </head>
+    <body>
+        <section class="wini center full">
+            <div class="image">
+                <img src="assets/img/ilp.svg" alt="" />
+                <h1>Introdução à Lógica de Programação</h1>
+            </div>
+        </section>
+        <section class="center full">
+            <h1>Pra quê programar?</h1>
+            <p>Peraê que Bill Gates, Mark Zuckerberg, will.i.am, Chris Bosh, Jack Dorsey, Tony Hsieh, Drew Houston, Gabe Newell, Ruchi Sanghvi, Elena Silenok, Vanessa Hurst, e Hadi Partovi vão te dizer:<p>
+            <iframe width="854" height="480" src="https://www.youtube.com/embed/nKIu9yen5nc" frameborder="0" allowfullscreen></iframe>
+        </section>
+        <section class="green">
+            <h1>Algoritmos pra que te quero.</h1>
+            <p>Algorítmo é o conceito base quando o assunto é programação de computadores.</p>
+            <p>Um algoritmo nada mais é do que uma sequência de passos que visam atingir
+            um objetivo bem definido. O que importa no algoritmo é o efeito das ações para a
+            obtenção do resultado esperado.</p>
+            <p>Um exemplo bem simples de algorítimo é a sequência de passos que devemos executar para resolver uma equação de segundo grau. Sei lá, vamos pegar a equação x² – 10x + 24 = 0.</p>
+            <ul>
+                <li>
+                    1º Passo: Identificar os valores de A, B, e C. Daí temos: A=1, B=-10, C=24.
+                </li>
+                <li>
+                    2º Passo: Calcular o valor de Δ. Onde:
+                    <pre>Δ = B² - 4*A*C</pre>
+                    <pre>Δ = (-10)² - 4*(1*24)</pre>
+                    <pre>Δ = 4</pre>
+                </li>
+                <li>
+                    3º Passo: Verificar se o valor de é maior que 0, menor que 0 ou = 0 para definir o próximo passo.
+                    Se for menor que 0, não precisamos calcular mais nada, pois a equação não terá valor real.
+                    Se for = 0, sabemos que só precisamos calcular x uma vez.
+                    Se for maior que zero. Calcularemos o valor para x’ e x’’.
+                    <p>No caso, Δ > 0.</p>
+                </li>
+                <li>
+                    4º Passo: Calcular o resultado fornecido pela equação de Bháskara. Daí:
+                    <pre>x’ = (-B + RAIZ(Δ)) / 2*A       x’’ = (-B - RAIZ(Δ)) / 2*A</pre>
+                    <pre>x’ = (-(-10) + 2) / 2           x’’ = (-(-10) - 2)) / 2</pre>
+                    <pre>x’ = 6                          x’’ = 4</pre>
+                </li>
+                <li>
+                    5º Passo: Identificar a solução. No caso:
+                    <pre>S = {x’, x’’}       S = { 6, 4 }</pre>
+                </li>
+            </ul>
+            <p>
+                Perceba que essa sequência de passos se manterá a mesma independente dos valores de A, B e C. Isso significa que A, B e C são componentes variáveis do nosso algorítimo.
+            </p>
+        </section>
+        <section>
+            <div class="text">
+                <h1>Variáveis, é?</h1>
+                <p>
+                    É, pois é, que coisa, não? Em programação, variáveis são elementos básicos de extrema importância.
+                </p>
+                <p>
+                    Podemos definir variáveis como um local onde um determinado valor é armazenado. Valor esse que pode ser modificado, ou não, durante a execução do algorítimo.
+                </p>
+                <p>As variáveis possuem 2 “paradas” básicas:</p>
+                <ul>
+                    <li>Conteúdo: valor atual da variável</li>
+                    <li>Identificador: nome dado à variável para possibilitar sua manipulação</li>
+                </ul>
+                <p>
+                    No nosso exemplo da equação de 2º Grau, as nossas variáveis são identificadas como A, B, C, x’ e x’’, tais que 1, -10, 24, 6 e 4 são os seus respectivos valores. Não modificamos o valor das nossas variáveis durante a execução desse algorítimo.
+                </p>
+            </div>
+            <div class="image">
+                <img class="reduces" src="assets/img/confused.svg" alt="" />
+            </div>
+        </section>
+        <section class="dark-blue">
+            <h3>
+                Um exemplo dessas variáveis em php:
+            </h3>
+            <div class="code-block">
+                <code><span>1 </span>&lt?php</code>
+                <code><span>2 ....</span>$a = 1;</code>
+                <code><span>3 ....</span>$b = -10;</code>
+                <code><span>4 ....</span>$c = 24;</code>
+                <code><span>5 ....</span>$delta = $b*$b - 4*$a*$c;</code>
+                <code><span>6 ....</span>$x1 = (-$b + sqrt($delta)) / (2 * $a)</code>
+                <code><span>7 ....</span>$x2 = (-$b - sqrt($delta)) / (2 * $a)</code>
+            </div>
+            <p>
+                E fica na um aí pra se ligar no seguinte:
+            </p>
+            <ul>
+                <li>
+                    Variáveis em PHP são representadas por um $ seguido pelo nome (identificador) da variável.
+                </li>
+                <li>
+                    Nomes de variáveis são case-sensitive. Isso significa dizer que $A é diferente de $a, $delta é diferente de $DeltA e de $DElta, enfim… O PHP é inteligente e sabe diferenciar maiúsculas de minúsculas.
+                </li>
+                <li>
+                    Um nome válido de variável sempre inicia com uma letra ou um underscore, seguidos de letras, números ou underscores. Ou seja… nomes de variáveis em PHP não podem iniciar com números.
+                </li>
+            </ul>
+        </section>
+        <section>
+            <div class="text">
+                <h1>Constantes</h1>
+                <p>Constantes são tipo variáveis, só que não variam. Ópaí quizidéa errada, né vey? As constantes também possuem um identificador, porém o seu conteúdo não varia ao longo da execução do programa. Lembra lá do nosso exemplo da equação?</p>
+                <code>
+                    Δ = B² - 4*A*C
+                </code>
+                <p>
+                    Não importa quem é A, quem é B ou quem é C. Aquele “4” sempre vai estar naquela parte da equação. É como se fosse uma constante, meio que já sendo.
+                </p>
+            </div>
+        </section>
+        <section class="wini">
+            <h1>Tipos de dados</h1>
+            <p>
+                Isso costuma variar um pouquinho de linguagem para linguagem. Mas como aqui o lance mesmo é PHP…
+            </p>
+            <p>PHP dá suporte aos seguintes tipos de dados [1]:</p>
+            <p>Quatro tipos escalares</p>
+            <ul>
+                <li>Booleanos</li>
+                <li>Inteiros</li>
+                <li>Números de ponto flutuante</li>
+                <li>Strings</li>
+            </ul>
+            <p>Três tipos compostos</p>
+            <ul>
+                <li>Arrays</li>
+                <li>Objetos</li>
+                <li>Callbacks / Callables</li>
+            </ul>
+            <p>Além de alguns tipos especiais</p>
+            <ul>
+                <li>Recursos</li>
+                <li>NULL</li>
+                <li>Mixed</li>
+                <li>Number</li>
+                <li>(e mais um monte)</li>
+            </ul>
+            <p>
+                Nem venha cheio de ideia, porque eu só vou explicar os que você precisa saber por enquanto. Se você quiser saber sobre todos, veja a documentação. Que onda...
+            </p>
+        </section>
+        <section>
+            <h3>E tem mais...</h3>
+            <p>
+                PHP é uma linguagem dinamicamente tipada, o que significa que você pode mudar o tipo de dado contido numa variável durante a execução do script. Exemplo:
+            </p>
+            <div class="code-block">
+                <code><span>1 </span>&lt?php</code>
+                <code><span>2 ....</span>$variavel = "Eu sou do tipo string";  <span style="color: #B0662F">// $variavel é string (ASCII 48)</span></code>
+                <code><span>3 ....</span>$variavel = 2;   <span style="color: #B0662F">// $variavel é agora um interio (2)</span></code>
+                <code><span>4 ....</span>$variavel = $variavel + 1.3;  <span style="color: #B0662F">// $variavel é agora um float (3.3)</span></code>
+                <code><span>5 ....</span>$variavel = TRUE;   <span style="color: #B0662F">// $variavel é agora um booleano</span></code>
+                <code><span>6 ....</span>$variavel = array("Valor 0", "Valor 1", "Valor 2", "Valor 3"); <span style="color: #B0662F">//$variável é agora um array, o que significa que você pode armazenar diversos valores dentro da mesma variável.</span></code>
+            </div>
+        </section>
+        <section class="dark-blue">
+            <h1>Dá pra lançar sabe o quê?</h1>
+            <p>
+                Operações aritméticas! <a href="https://www.youtube.com/watch?v=VVxbYu9ueJw">Ééé... ISSO mesmo que você OUviu!</a> PHP aceita as operações de soma, subtração, divisão e multiplicação (+, -, /, *) e aceita parênteses para definir prioridades.
+            </p>
+            <div class="code-block">
+                <code>
+                    &lt?php $a = 2*(19 + 1) - 10/2;  <span style="color: #B0662F">//Resulta em 35</span> ?&gt
+                </code>
+            </div>
+            <p>
+                Agora tem uns lances mais legais também, como as operações envolvendo atribuição, onde você lança o operador antes do sinal de igual para dizer que tá incluindo aquela variável na operação que o operador faria. Sacou?
+            </p>
+            <div class="code-block">
+                <code><span>1 </span>&lt?php</code>
+                <code><span>2 ....</span>$a = 1;</code>
+                <code><span>3 ....</span>$b = 2;</code>
+                <code><span>4 ....</span>$a = 1;</code>
+                <code><span>5</span></code>
+                <code><span>6 ....</span>$a += $b;  <span style="color: #B0662F">// vai resultar em 3, pois vai lançar 1+2</span></code>
+                <code><span>7 ....</span>$a -= $b;  <span style="color: #B0662F">// vai resultar em -1. pois vai lançar 1-2</span></code>
+                <code><span>8 ....</span>$a *= $b;  <span style="color: #B0662F">// vai resultar em 2, pois vai lançar 1*2</span></code>
+                <code><span>9 ....</span>$a /= $b;  <span style="color: #B0662F">// vai resultar em?? TESTE AÍ...</span></code>
+            </div>
+            <p>
+                Ah, e quando utilizamos um símbolo de igual, ele não significa IGUAL, siginifica RECEBE, no caso $a = 1 quer dizer que a variável a recebe o valor 1.
+            </p>
+        </section>
+        <section>
+            <h1>Comparando as coisas!</h1>
+            <p>
+                Quando queremos comparar duas coisas e dizer que elas são IGUAIS, utilizamos == que é um operador. Só que é um operador relacional, e aí a gente  vai ter também os sinais de diferente, maior, menor, maior igual, menor igual.
+            </p>
+            <div class="code-block">
+                <code><span>1 </span>&lt?php</code>
+                <code><span>2 ....</span>$a == $b <span style="color: #B0662F">//Igual</span></code>
+                <code><span>3 ....</span>$a === $b <span style="color: #B0662F">//Idêntico</span></code>
+                <code><span>4 ....</span>$a != $b <span style="color: #B0662F">//Não iguais</span></code>
+                <code><span>5 ....</span>$a <> $b <span style="color: #B0662F">//Não iguais</span></code>
+                <code><span>6 ....</span>$a !== $b <span style="color: #B0662F">//Não idênticos</span></code>
+                <code><span>7 ....</span>$a < $b <span style="color: #B0662F">//Menor que</span></code>
+                <code><span>8 ....</span>$a > $b <span style="color: #B0662F">//Menor que</span></code>
+                <code><span>9 ....</span>$a <= $b <span style="color: #B0662F">//Menor ou igual a</span></code>
+                <code><span>10....</span>$a >= $b <span style="color: #B0662F">//Maior ou igual a</span></code>
+            </div>
+            <p>
+                Presta atenção na exclamação. Ela é um símbolo de negação.
+            </p>
+        </section>
+        <section class="blue center">
+            <div class="text">
+                <h1>
+                    E aí, a introdução à lógica de programação é isso aí.
+                </h1>
+                <p>
+                    A sequência desse guia é o guia de MySQL. Você já ouviu falar nisso?
+                </p>
+            </div>
+            <div class="image">
+                <img src="assets/img/queen.png" alt="" />
+            </div>
+        </section>
+        <footer>
+            <p>
+                © InfoJr UFBA - 2016
+            </p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+.tag
+  border-radius: 3px
+  border: 1px solid
+  cursor: pointer
+  display: inline-block
+  margin: 2.5px
+  padding: 5px 10px
+
+  &-blue
+    @extend .tag
+
+    +coloredElement(#314F4F)
+
+    +bounce(#FFF, bottom)
+
+  &-green
+    @extend .tag
+
+    +coloredElement(#7CB124)
+
+    +bounce(#FFF, right)
+
+  &-orange
+    @extend .tag
+
+    +coloredElement(#EB891C)
+
+    +bounce(#FFF, top)
+
+  &-red
+    @extend .tag
+
+    +coloredElement(#FA7459)
+
+    +bounce(#FFF)
+
+  &-blue
+    @extend .tag
+
+    +coloredElement(#2196F3)
+
+    +bounce(#FFF)
+
+.active
+  background-color: #FFF
+  color: #333
