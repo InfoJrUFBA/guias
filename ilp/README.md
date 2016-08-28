@@ -1,6 +1,6 @@
-# GUIA RÁPIDO DE POO
+# GUIA RÁPIDO DE ILP
 
-Programação Orientada a Objetos
+Introdução à Lógica de Programação
 
 - Autores: @jprodrigues70 e @AdeilsonSilva;
 - E-mails:
