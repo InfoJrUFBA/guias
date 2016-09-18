@@ -41,7 +41,7 @@
                 </p>
                 <h3>MODEL</h3>
                 <p>
-                    A model é a camada que vai interagir com o Banco de Dados. É nela que vamos aplicar o conhecimento que obtivemos no <a href="https://infojrufba.github.io/g/crud/">guia de CRUD</a>. Na model a gente vai lançar as inserções, requisições, atualizações, deleções, desde as declaroções mais básicas até as declarações mais complexas, usando PHP & MySQL.
+                    A model é a camada que vai interagir com o Banco de Dados. É nela que vamos aplicar o conhecimento que obtivemos no <a href="https://infojrufba.github.io/g/crud/">guia de CRUD</a>. Na model a gente vai lançar as inserções, requisições, atualizações, deleções, desde as declarações mais básicas até as declarações mais complexas, usando PHP & MySQL.
                 </p>
                 <p>
                     Você lembra da definição de modelo que demos lá no <a href="https://infojrufba.github.io/g/poo">guia de POO?</a> Pois é. Os nossos modelos serão naquele esquema.
@@ -236,7 +236,7 @@
                 <code><span>7 ............</span>$user = new User($_POST);</code>
                 <code><span>8 ............</span>try {</code>
                 <code><span>9 ................</span>$user->insert();</code>
-                <code><span>10................</span>$_SESSION['msg'] = "Usuário criado com sucesso!";</code>
+                <code><span>10................</span>$_SESSION['msg'] = '">Usuário criado com sucesso!';</code>
                 <code><span>11............</span>}</code>
                 <code><span>12............</span>catch(pdoexception $e) {</code>
                 <code><span>13................</span>$_SESSION['msg'] = 'fail">Erro.';</code>
