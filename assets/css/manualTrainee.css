@@ -424,6 +424,13 @@ p {
   .white:hover {
     background-color: nill; }
 
+.html-orange {
+  background-color: #E44D26;
+  border-color: #E44D26;
+  color: #FFF; }
+  .html-orange:hover {
+    background-color: nill; }
+
 .tag, .tag-blue, .tag-green, .tag-orange, .tag-red {
   border-radius: 3px;
   border: 1px solid;
