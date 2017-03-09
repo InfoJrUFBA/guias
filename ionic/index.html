@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../assets/css/manualTrainee.css">
+        <link rel="icon" type="image/png" href="assets/img/infojr-ico.svg">
+        <title>Guias - Ionic</title>
+    </head>
+    <body>
+        <section class="ionic-blue center full">
+            <div class="image">
+                <img src="assets/img/ionic-logo.png" alt="" />
+                <h1>Ionic Framework</h1>
+                <h4>
+                    Ionic is the beautiful, free and open source mobile SDK for developing native and progressive web apps with ease.
+                </h4>
+                <br>
+                <ul>
+                    <li>Cordova CLI: 6.4.0</li>
+                    <li>Ionic Framework Version: 2.0.0</li>
+                    <li>Ionic CLI Version: 2.2.1</li>
+                    <li>Ionic App Lib Version: 2.2.0</li>
+                    <li>Ionic App Scripts Version: 1.0.0</li>
+                    <li>OS: Linux 4.4</li>
+                    <li>Node Version: v6.9.4</li>
+                </ul>
+            </div>
+        </section>
+        <section class="">
+            <div class="text">
+                <h1>Vamos começar as coisas com ionic, né?</h1>
+                <p>Se você nunca desenvolveu para mobile, talvez esse guia seja de grande ajuda. Uma das perguntas que você pode estar a se fazer é: O Ionic é a melhor opção? A resposta é NÃO! O Ionic não consegue aproveitar os recursos dos dispositivos Mobile como os Aplicativos Nativos. O que significa que se seu interesse está no melhor desempenho possível, o Ionic, infelizmente, não é a resposta.<p>
+                <h1>E por quê eu deveria utilizar Ionic?</h1>
+                <p>
+                  Bom, a princípio, por praticidade. O Ionic vai permmitir que com apenas 1 codebase, você compile aplicativos para os principais sistemas operacionais do mercado. Um outro ponto positivo, se você é programador web, é que você não vai precisar aprender nada novo, Ionic é Web App, e utiliza TypeScript, HTML5, SCSS e Angular.
+                </p>
+            </div>
+            <div class="image">
+                <img src="assets/img/mobile.svg" alt="" />
+            </div>
+        </section>
+        <section class="dark-blue">
+            <h3>E por onde começar?</h3>
+            <p>
+                Primeiro você vai ter que instalar algumas coisas. E você que não instale não... <a href="https://nodejs.org/en/download/package-manager/">Ó o link.</a>
+            </p>
+            <ul>
+                <li>NodeJs</li>
+                <li>npm</li>
+            </ul>
+            <p>Instalados, você vai chegar no terminal e lançar:</p>
+            <div class="code-block">
+                <code>$ npm install -g cordova ionic</code>
+            </div>
+            <p>
+                O `-g` vai instalar o ionic e o cordova globalmente, mas você pode instalar apenas no repositório do projeto, removendo o `-g`.
+            </p>
+            <div class="white c-box">
+                OLHE, você leia com atenção a documentação do npm, ou isso pode custar muito caro... Ninguém quer formatar o PC quando está prestes a descobrir um novo mundo, não é? Fica a dica.
+            </div>
+            <div class="white c-box">
+                DICA: Se você tiver que dar `sudo npm -g install ionic`, você deve ter feito algo errado, e vai ter um pouco de dor de cabeça. O correto é chegar no fim, e não precisar de sudo para executar instalações com npm.
+            </div>
+        </section>
+        <section>
+            <h3>É hora do SHOW!</h3>
+            <p>
+                Ambiente de desenvolvimento devidamente configurado, precisamos iniciar o nosso projeto. Se segura.
+            </p>
+            <div class="code-block">
+                <code>$ ionic start --v2 myApp sidemenu</code>
+            </div>
+            <h3>O que é isso?</h3>
+            <p>
+                Ué, `ionic start` é o comando para iniciar o projeto, `--v2` é a versão do ionic que você vai utilizar, 'myApp' é o nome do novo aplicativo, e `sidemenu` é o template base que estamos adotando.
+            </p>
+            <h3>E PRONTO. É isso mesmo que você ouLeu!</h3>
+            <div class="code-block">
+                <code>$ cd myApp</code>
+                <code>$ ionic serve</code>
+            </div>
+            <p>
+                Contemple esse aplicativo que está vivo no seu navegador. HEHE. Agora se ligue, eu recomendo que você utilize o Google Chrome para auxiliar nos testes. Daí, se ele não for o seu navegador padrão:
+            </p>
+            <div class="code-block">
+                <code>$ ionic serve -w google-chrome</code>
+            </div>
+        </section>
+        <section class="ionic-blue">
+            <h1>E essas pastas todas?</h1>
+            <p>
+                O importante é que a gente vai trabalhar com o conteúdo da pasta <code>src</code>. Em src encontramos nosso código bruto, não compilado. Quando executamos <code>ionic serve</code>, nosso código dentro de src é compilado para a versão de Javascript e CSS que os navegadores entendem. E aí podemos trabalhar em um nível mais alto usando TypeScript e SCSS ou SASS, mas compilar para baixo.
+            </p>
+            <ul>
+                <li><code><b>app</b></code> - Merece uma atenção especial.</li>
+                <li>
+                  <code><b>pages</b></code> - Guarda as páginas do sistema, segmentadas por pasta. Cada pasta pode representar um conteúdo de página composto por um arquivo typeScript (ts), um arquivo scss, e um arquivo html.
+                </li>
+                <li><code><b>theme</b></code> - Guarda o arquivo variables.scss, onde ficam as variáveis de estilo superglobais do seu aplicativo, tais como as variáveis de cor.</li>
+            </ul>
+            <h3>O que é que a app tem?</h3>
+            <p>
+                A app é uma espécie de repositório de configuração.
+            </p>
+            <p>
+                O app/module.ts é o portão de entrada, pae. Todas as páginas devem ser declaradas nesse arquivo, como no modelo que foi gerado quando você criou o app. Aqui definiu-se o component root como sendo a classe MyApp que se encontra em app.component.ts;
+            </p>
+            <p>
+                O app/app.component.ts é a primeira coisa que vai ser carregada no seu aplicativo. Entao se você quiser que alguma coisa execute primeiro, essa coisa deve ser escrita aqui. Como por exemplo, a configuração dinâmica do menu. Por falar em menu, ele está no arquivo app/app.html no nosso exemplo. O app/app.html é o template do nosso app.component.
+            </p>
+        </section>
+        <section>
+            <h1>E se eu quiser criar qualquer página aí, eu posso?</h1>
+            <h2>Pode.</h2>
+            <div class="code-block">
+                <code>$ ionic g page home</code>
+            </div>
+            <p>
+                Aí veja os arquivos gerados em src/pages. Você vai tornar sua nova página ativa adicionando-a ao arquivo app.module.ts, e a referência para isso será o nome da classe de home.ts
+            </p>
+            <div class="code-block">
+                <code><span>...</span></code>
+                <code><span>4. </span>import { HomePage } from '../pages/home/home';</code>
+                <code><span>...</span></code>
+            </div>
+            <p>
+                Depois adicione-a à lista de declarations.
+            </p>
+            <div class="code-block">
+                <code><span>8. </span>declarations: [</code>
+                <code><span>9. ....</span>MyApp,</code>
+                <code><span>10.....</span>HomePage,</code>
+                <code><span>11.</span>],</code>
+            </div>
+            <p>
+                E à lista de entryComponents.
+            </p>
+            <div class="code-block">
+                <code><span>17.</span>entryComponents: [</code>
+                <code><span>18.....</span>MyApp,</code>
+                <code><span>19.....</span>HomePage,</code>
+                <code><span>20.</span>],</code>
+            </div>
+        </section>
+        <section class="dark-blue">
+            <h3>Agora que sua página realmente existe...</h3>
+            <h4>Vamos adicioná-la ao menu.</h4>
+            <p>Lá no seu app.component.ts, adicione a página.</p>
+            <div class="code-block">
+                <code><span>...</span></code>
+                <code><span>4. </span>import { HomePage } from '../pages/home/home';</code>
+                <code><span>...</span></code>
+            </div>
+            <p>
+                Depois repare que na própria app.component.ts existe uma lista de objetos chamada <code>pages</code> dentro do construtor. Experimente adicionar a <code>HomePage</code> nessa lista, e repare que na <code>app.html</code> tem um bloco com algo muito interessante. Algo como:
+            </p>
+            <div class="code-block">
+                <code>*ngFor="let p of pages" (click)="openPage(p)"</code>
+            </div>
+            <p>
+                O for está percorrendo a variável pages do app.component? SIM! E a openPage é uma função que foi declarada lá. Bom, analise o código da app.component.ts e da app.html e tire suas conclusões. Veja o código das páginas de exemplo também.
+            </p>
+            <p>
+                A documentação do Ionic tem um mundo de possibilidades para você montar seu App. Analise com atenção, ela é bem simples e intuitiva. ;)
+            </p>
+        </section>
+        <section class="center">
+            <div class="text">
+                <h1>E aí, a introdução ao Ionic é isso aí.</h1>
+                <p>
+                    Esse guia não substitui de maneira nenhuma a documentação oficial do Ionic Framework.
+                </p>
+                <a href="http://ionicframework.com/docs/">ionicframework.com/docs/</a>
+            </div>
+            <div class="image">
+                <img src="assets/img/wm.png" alt="" />
+            </div>
+        </section>
+        <footer>
+            <p>© InfoJr UFBA - 2017</p>
+        </footer>
+    </body>
+</html>
