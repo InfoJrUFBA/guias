@@ -3,13 +3,13 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="../assets/css/manualTrainee.css">
-        <link rel="icon" type="image/png" href="../assets/img/infojr-ico.svg">
+        <link rel="icon" type="image/png" href="https://infojrufba.github.io/g/assets/img/infojr-ico.svg">
         <title>Guias - HTML</title>
     </head>
     <body>
         <section class="html-orange center full">
             <div class="image">
-                <img src="../assets/img/html.svg" alt="" />
+                <img src="assets/img/html5.png" alt="" />
                 <h1>HyperText Markup Language</h1>
             </div>
         </section>
@@ -27,28 +27,110 @@
                 </p>
             </div>
             <div class="image">
-                <img class="reduces" src="" alt="" />
+                <img class="" src="assets/img/fossil.png" alt="" />
             </div>
         </section>
         <section class="green">
-            <div class="image">
-                <img class="" src="" alt="" />
+            <p>
+                E já que estamos falando de esqueleto, vamos à estrutura básica de uma página HTML.
+            </p>
+            <div class="code-block">
+                <code><span>1.. </span>&lt!DOCTYPE html&gt</code>
+                <code><span>2.. </span>&lthtml&gt</code>
+                <code><span>3.. ....</span>&lthead&gt</code>
+                <code><span>4.. ........</span>&ltmeta charset="utf-8"&gt</code>
+                <code><span>5.. ........</span>&lttitle&gt MyPage &lt/title&gt</code>
+                <code><span>6.. ....</span>&lt/head&gt</code>
+                <code><span>7..</span></code>
+                <code><span>8.. ....</span>&ltbody&gt</code>
+                <code><span>9.. ....</span>&lt/body&gt</code>
+                <code><span>10. </span>&lt/html&gt</code>
             </div>
-            <div class="text-right">
+            <h3>Beleza. Que onda é essa?</h3>
+            <ul style="font-size: 18px">
+                <li><b>&lt!DOCTYPE html&gt - </b>Essa declaração diz ao navegador que estamos trabalhando com HTML.</li>
+                <li><b>&lthtml&gt&lt/html&gt - </b>Essas são as tags de abertura e fechamento do documento HTML. &lthtml&gt é o nosso ponto de partida, e &lt/html&gt é o nosso adeus.</li>
+                <li><b>&lthead&gt&lt/head&gt</b> - Entre essas tags declararemos algumas coisas interessantes, como o título da nossa página. Aquele... o que aparece na aba do navegador :) (&lttitle&gt&lt/title&gt).</li>
+                <li><b>&ltbody&gt&lt/body&gt</b> - Entre essas tags a criatividade prudente está liberada! HAHA. É aqui que vamos compor a nossa estrutura.</li>
+            </ul>
+        </section>
+        <section>
+            <h3>E que tipo de coisa interessante vai na &lthead&gt&lt/head&gt??</h3>
+            <p>
+                Sabe aqueles ícones que aparecem na aba de um navegador? Bom... Ela pode ser incluída assim. Na head.
+            </p>
+            <div class="code-block">
+                <code>&ltlink rel="icon" type="image/png" href="https://infojrufba.github.io/g/assets/img/infojr-ico.svg"&gt</code>
+            </div>
+            <h3>Você não achou estranho que, na seção anterior, a &ltmeta charset="utf-8"&gt não foi descrita?</h3>
+            <p>
+                Tá. A função da meta tag é descrever metadados em um documento HTML.
+            </p>
+            <h3>Subi no ônibus em Marrocos. </h3>
+            <p>
+                Exatamente. Não faz muito sentido se não for explicado...
+            </p>
+            <p>
+                Metadados são dados sobre os dados. É isso aí. Eles não serão exibidos nas páginas, mas serão interpretados e dirão coisas para quem os iterpretar (navegadores, mecanismos de busca, e outros serviços).
+            </p>
+        </section>
+        <section class="wini">
+            <h3>Exemplos</h3>
+            <p>
+                As keyowrds ajudam a encontrarmos websites em mecanismos de busca.
+            </p>
+            <div class="code-block">
+                <code>
+                    <span>1. </span>&ltmeta name="keywords" content="HTML, InfoJr, UFBA, CSS"&gt
+                </code>
+            </div>
+            <p>
+                A description descreve a descrição do seu site.
+            </p>
+            <div class="code-block">
+                <code>
+                    <span>1. </span>&ltmeta name="description" content="Guia de HTML da InfoJr UFBA"&gt
+                </code>
+            </div>
+            <p>
+                Autor.
+            </p>
+            <div class="code-block">
+                <code>
+                    <span>1. </span>&ltmeta name="author" content="JP Rodrigues"&gt
+                </code>
+            </div>
+            <p>
+                Essa meta tag é importantíssima, pois garante uma boa visualização da sua página em todos os dispositivos. Responsividade.
+            </p>
+            <div class="code-block">
+                <code>
+                    <span>1. </span>&ltmeta name="viewport" content="width=device-width, initial-scale=1.0"&gt
+                </code>
+            </div>
+            <p>
+                Toda metatag deve ser incluída na head. Metadados não são escritos apenas na tag meta. A tag meta for criada para representar qualquer informação que não pudesse ser representada pelas tags &ltbase&gt, &ltlink&gt, &ltscript&gt, &ltstyle&gt ou &lttitle&gt.
+            </p>
+            <div class="w-box">
+                Entenda que as metatags são opcionais. O seu código não vai parar de funcionar se não escrevê-las.
             </div>
         </section>
         <section>
-            <div class="text">
-            </div>
-            <div class="image">
-                <img class="reduces" src="" alt="" />
-            </div>
-        </section>
-        <section class="wini center">
-            <div class="text">
-            </div>
+            <h3>E agora?</h3>
+            <p>
+                Agora você precisa aprender algumas tags muito importantes e que devem ser utilizadas na body.
+            </p>
+            <ul>
+                <li><b>div - </b>As divs são como caixas que agrupam qualquer conteúdo como você quiser.</li>
+                <li><b>h1, h2, h3, h4, h5, h6 - </b>São tags que devem ser utilizadas apenas para títulos. O h1 é o título de maior prioridade e tamanho, e h6 é o título de menor prioridade e tamanho.</li>
+                <li><b>p</b> - Tag que deve ser utilizada APENAS para texto. Representa parágrafos.</li>
+                <li><b>ul</b> - lista não ordenada e que deve ser preenchida apenas com a tag <b>li</b>, que por sua vez deve ser utilizada para escrever os items de uma lista.</li>
+                <li><b>header</b> - representa um grupo de ajudas introdutórias ou de navegação. Essa tag pode conter alguns elementos de título, mas também outros elementos como um logotipo, um campo de busca e afins.</li>
+                <li><b>section</b> - A section é um tematizador de conteúdo. Todo o conteúdo dentro de uma section deve tratar do mesmo assunto. Normalmente contém um h1-h6 que identifica a seção.</li>
+            </ul>
         </section>
         <section>
+            <h1>ESTE GUIA AINDA NÃO ESTÁ PRONTO.</h1>
         </section>
         <section class="blue center">
             <div class="text">
