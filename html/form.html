@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Meu Form</title>
+    <style media="screen">
+      section {
+        text-align: center;
+      }
+      form {
+        width: 500px;
+        margin: 0 auto;
+      }
+      label, input, textarea, select {
+        text-align: left;
+        width: 100%;
+        display: block;
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1>Novo Usuário</h1>
+      <form method="POST" action="form.html">
+        <label for="name"> Nome </label>
+        <input id="name" name="name" type="text"></input>
+        <label for="email"> Email </label>
+        <input id="email" name="email" type="email"></input>
+        <label for="pass"> Senha </label>
+        <input id="pass" name="password" type="password"></input>
+        <label for="age"> Idade </label>
+        <input id="age" value="18" name="age" type="number"></input>
+        <label for="phone"> Telefone </label>
+        <input id="phone" name="tel" type="text"></input>
+        <label for="textarea">Descrição</label>
+        <textarea id="description" name="description" rows="8" cols="40"></textarea>
+        <label for="level">Nível de Acesso</label>
+        <select name="level" id="level">
+          <option value="50">Administrador</option>
+          <option value="22">Usuário</option>
+        </select>
+        <button type="button">Não faz nada.</button>
+        <button type="submit">Envia o form.</button>
+        <button type="cancel">Apaga os dados.</button>
+      </form>
+    </section>
+  </body>
+</html>

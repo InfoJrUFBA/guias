@@ -48,7 +48,7 @@
             </div>
             <h3>Beleza. Que onda é essa?</h3>
             <ul style="font-size: 18px">
-                <li><b>&lt!DOCTYPE html&gt - </b>Essa declaração diz ao navegador que estamos trabalhando com HTML.</li>
+                <li><b>&lt!DOCTYPE html&gt - </b>Essa declaração diz ao navegador que estamos trabalhando com HTML. Não é uma tag HTML, é uma instrução para o navegador.</li>
                 <li><b>&lthtml&gt&lt/html&gt - </b>Essas são as tags de abertura e fechamento do documento HTML. &lthtml&gt é o nosso ponto de partida, e &lt/html&gt é o nosso adeus.</li>
                 <li><b>&lthead&gt&lt/head&gt</b> - Entre essas tags declararemos algumas coisas interessantes, como o título da nossa página. Aquele... o que aparece na aba do navegador :) (&lttitle&gt&lt/title&gt).</li>
                 <li><b>&ltbody&gt&lt/body&gt</b> - Entre essas tags a criatividade prudente está liberada! HAHA. É aqui que vamos compor a nossa estrutura.</li>
@@ -120,35 +120,131 @@
             <p>
                 Agora você precisa aprender algumas tags muito importantes e que devem ser utilizadas na body.
             </p>
-            <ul>
+            <ul style="font-size: 18px">
                 <li><b>div - </b>As divs são como caixas que agrupam qualquer conteúdo como você quiser.</li>
                 <li><b>h1, h2, h3, h4, h5, h6 - </b>São tags que devem ser utilizadas apenas para títulos. O h1 é o título de maior prioridade e tamanho, e h6 é o título de menor prioridade e tamanho.</li>
                 <li><b>p</b> - Tag que deve ser utilizada APENAS para texto. Representa parágrafos.</li>
+                <li><b>br</b> - Quebra de linha. Só deve ser utilizada em meio a tags de TEXTO, tal como p, h1-h6. Não deve ser utilizada como auxiliar de estilização para separar divs, inputs e outras tags que não sejam tags de texto. </li>
                 <li><b>ul</b> - lista não ordenada e que deve ser preenchida apenas com a tag <b>li</b>, que por sua vez deve ser utilizada para escrever os items de uma lista.</li>
                 <li><b>header</b> - representa um grupo de ajudas introdutórias ou de navegação. Essa tag pode conter alguns elementos de título, mas também outros elementos como um logotipo, um campo de busca e afins.</li>
+                <li><b>nav</b> - utilizada para identificar menus de navegação.</li>
                 <li><b>section</b> - A section é um tematizador de conteúdo. Todo o conteúdo dentro de uma section deve tratar do mesmo assunto. Normalmente contém um h1-h6 que identifica a seção.</li>
+                <li><b>img</b> - Utilizada para inserir imagens na página.</li>
+            </ul>
+        </section>
+        <section class="sass-pink">
+            <h3>Criando formulários</h3>
+            <a href="form.html" target="_blank" class="btn-bounce-r">Veja o exemplo. :)</a>
+            <div class="code-block">
+                <code><span>1.. </span>&lt!DOCTYPE html&gt</code>
+                <code><span>2.. </span>&lthtml&gt</code>
+                <code><span>3.. ..</span>&lthead&gt</code>
+                <code><span>4.. ....</span>&ltmeta charset="utf-8"&gt</code>
+                <code><span>5.. ....</span>&lttitle&gt MyForm &lt/title&gt</code>
+                <code><span>6.. ..</span>&lt/head&gt</code>
+                <code><span>7..</span></code>
+                <code><span>8.. ..</span>&ltbody&gt</code>
+                <code><span>9.. ....</span>&lt<span style="color: #cc2a6f">form</span> method="POST" action="somefile.ext"&gt</code>
+                <code><span>10. ......</span>&lt<span style="color: #cc2a6f">label</span> for="name"&gt Nome &lt/<span style="color: #cc2a6f">label</span>&gt</code>
+                <code><span>11. ......</span>&lt<span style="color: #cc2a6f">input</span> id="name" name="name" type="text"&gt&lt/<span style="color: #cc2a6f">input</span>&gt</code>
+                <code><span>12. ......</span>&lt<span style="color: #cc2a6f">label</span> for="email"&gt Email &lt/<span style="color: #cc2a6f">label</span>&gt</code>
+                <code><span>13. ......</span>&lt<span style="color: #cc2a6f">input</span> id="email" name="email" type="email"&gt&lt/<span style="color: #cc2a6f">input</span>&gt</code>
+                <code><span>14. ......</span>&lt<span style="color: #cc2a6f">label</span> for="pass"&gt Senha &lt/<span style="color: #cc2a6f">label</span>&gt</code>
+                <code><span>15. ......</span>&lt<span style="color: #cc2a6f">input</span> id="pass" name="password" type="password"&gt&lt/<span style="color: #cc2a6f">input</span>&gt</code>
+                <code><span>16. ......</span>&lt<span style="color: #cc2a6f">label</span> for="age"&gt Idade &lt/<span style="color: #cc2a6f">label</span>&gt</code>
+                <code><span>17. ......</span>&lt<span style="color: #cc2a6f">input</span> id="age" value="18" name="age" type="number"&gt&lt/<span style="color: #cc2a6f">input</span>&gt</code>
+                <code><span>18. ......</span>&lt<span style="color: #cc2a6f">label</span> for="phone"&gt Telefone &lt/<span style="color: #cc2a6f">label</span>&gt</code>
+                <code><span>19. ......</span>&lt<span style="color: #cc2a6f">input</span> id="phone" name="tel" type="text"&gt&lt/<span style="color: #cc2a6f">input</span>&gt</code>
+                <code><span>20. ......</span>&lt<span style="color: #cc2a6f">label</span> for="description"&gt Descrição &lt/<span style="color: #cc2a6f">label</span>&gt</code>
+                <code><span>21. ......</span>&lt<span style="color: #cc2a6f">textarea</span> id="description" name="description" rows="8" cols="40"&gt&lt/<span style="color: #cc2a6f">textarea</span>&gt</code>
+                <code><span>22. ......</span>&lt<span style="color: #cc2a6f">select</span> name="level" id="level"&gt</code>
+                <code><span>23. ........</span>&lt<span style="color: #cc2a6f">option</span> value="50"&gtAdministrador&lt/<span style="color: #cc2a6f">option</span>&gt</code>
+                <code><span>24. ........</span>&lt<span style="color: #cc2a6f">option</span> value="22"&gtUsuário&lt/<span style="color: #cc2a6f">option</span>&gt</code>
+                <code><span>25. ......</span>&lt/<span style="color: #cc2a6f">select</span>&gt</code>
+                <code><span>26. ......</span>&lt<span style="color: #cc2a6f">button</span> type="button">Não faz nada.&lt/<span style="color: #cc2a6f">button</span>&gt</code>
+                <code><span>27. ......</span>&lt<span style="color: #cc2a6f">button</span> type="submit">Envia o form.&lt/<span style="color: #cc2a6f">button</span>&gt</code>
+                <code><span>28. ......</span>&lt<span style="color: #cc2a6f">button</span> type="cancel">Apaga os dados.&lt/<span style="color: #cc2a6f">button</span>&gt</code>
+                <code><span>29. ....</span>&lt/<span style="color: #cc2a6f">form</span>&gt</code>
+                <code><span>30. ..</span>&lt/body&gt</code>
+                <code><span>31. </span>&lt/html&gt</code>
+            </div>
+            <ul class="c-box white" style="font-size: 18px">
+                <li>
+                    <b>form - </b>É a tag responsável por criar formulários.
+                    <ul>
+                        <li><b>method</b> - Atributo que determina por qual método HTTP um formulário vai ser enviado. As opções são GET e POST. O padrão é GET.</li>
+                        <li><b>action</b> - Determina para onde as informações do formulário serão enviadas. Normalmente é o endereço de um arquivo de controlador. Ex: "controllers/user_controller.php"</li>
+                    </ul>
+                </li>
+                <li>
+                    <b>input</b> - Tag que para criar campos de texto.
+                    <ul>
+                        <li><b>id</b> - Atributo que identifica unicamente qualquer elemento html. Você não pode colocar o mesmo id em 2 ou mais elementos.</li>
+                        <li><b>type</b> - Atributo que determina o tipo de dado que vai ser inserido em um input. (text, email, password, date, number, hidden, color, radio, checkbox)</li>
+                        <li><b>name</b> - Atributo que determina o nome de um input. Essa informação normalmente é utilizada no backend para processar e identificar as informações enviadas pelo formulário.</li>
+                        <li><b>value</b> - Valor padrão para um input.</li>
+                    </ul>
+                </li>
+                <li>
+                    <b>label - </b>Tag que define o título de um campo de texto.
+                    <ul>
+                        <li><b>for - </b>Atributo que determina a qual input a label se refere através do id do input. Faz com que ao usuário clicar na label, selecione o input.</li>
+                    </ul>
+                </li>
+                <li>
+                    <b>textarea</b> - Tag para campos de texto longo
+                    <ul>
+                        <li><b>rows - </b> Número de linhas.</li>
+                        <li><b>cols - </b> Número de colunas.</li>
+                    </ul>
+                </li>
+                <li>
+                    <b>select</b> - Seletor com lista de opções
+                    <ul>
+                        <li><b>option - </b> Opção.</li>
+                    </ul>
+                </li>
+                <li>
+                    <b>button</b> - Tag para botões
+                    <ul>
+                        <li>
+                            <b>type - </b> Determina o tipo de ação executada pelo botão.
+                            <ul>
+                                <li><b>submit - </b>Envia o formulário</li>
+                                <li><b>cancel - </b>Devolve os valores do formulário ao padrão. Se o padrão não for definido, será vazio.</li>
+                                <li><b>button - </b>Não executa nenhuma ação. Útil para ações personalizadas com javascript.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </section>
         <section>
-            <h1>ESTE GUIA AINDA NÃO ESTÁ PRONTO.</h1>
+            <div class="image">
+                <img src="../assets/img/clothes.png" alt="Homem de Chapéu" class="reduces"/>
+            </div>
+            <div class="text">
+                <h1>CHEGA DE TANTA TAG</h1>
+                <p>
+                    O que você precisa entender do HTML é a semântica das coisas. Cada tag tem uma função, e deve ser utilizada apenas para aquela função, caso contrário, sua aplicação vai confundir navegadores, motores de busca, leitores de tela, softwares para deficientes visuais e afins.
+                </p>
+                <p>Então presta atenção! Um html bem escrito é tudo! :D</p>
+            </div>
         </section>
         <section class="blue center">
             <div class="text">
                 <h1>
                     E aí, a introdução a HTML é isso aí.
                 </h1>
-                <p>
-                </p>
-                <p>
-                </p>
+                <a href="https://www.w3schools.com/html/">Uma documentação do html com todas as tags e atributos.</a>
             </div>
             <div class="image">
-                <img src="assets/img/queen.png" alt="" />
+                <img src="../assets/img/wm.png" alt="Silhueta de rosto de mulher" />
             </div>
         </section>
         <footer>
             <p>
-                © InfoJr UFBA - 2016
+                © InfoJr UFBA - 2017
             </p>
         </footer>
     </body>
