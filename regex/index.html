@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="../assets/css/manualTrainee.css">
+      <link rel="icon" type="image/png" href="../assets/img/infojr-ico.svg">
+      <title>Guias - RegEx</title>
+  </head>
+  <body>
+    <section class="deed-purple center full">
+      <div class="image">
+        <img src="../assets/img/clothes.png" alt="" class="reduces" />
+        <h1>RegEx</h1>
+        <h1>Reg[ular] Exp[ression]</h1>
+      </div>
+    </section>
+    <section>
+      <div class="text">
+        <h1>Tá Zoando? Que onda é essa?</h1>
+        <p>
+          Uma expressão regular (RegEx, regular expression) é uma forma concisa e flexível de identificar cadeias de caracteres ou padrões de caracteres. Expressões regulares são escritas numa linguagem formal que pode ser interpretada por um processador de expressão regular, um programa que identifica as partes de umas string/texto que casam com a especificação dada.
+        </p>
+      </div>
+    </section>
+    <section class="green">
+      <h1>Tá... Como funciona?</h1>
+      <p>
+        Bom, a estrutura básica de uma expressão regular é:
+      </p>
+      <div class="code-block">
+        <code><span style="color: #57d5f8">^</span>\<span style="color: #7ef51f">d</span>{<span style="color:  #e63f9d">2</span>}<span style="color: #fed064">$</span></code>
+        <code><span>......</span><span style="color: #fed064">└── </span>Coincide com o fim da cadeia/string.</code>
+        <code><span>....</span><span style="color: #e63f9d">└── </span>Valor exato de caracteres para coincidir.</code>
+        <code><span>..</span><span style="color: #7ef51f">└──</span> Tipo de coincidência.</code>
+        <code><span></span><span style="color: #57d5f8">└──</span> Coincide com o início da cadeia/string.</code>
+      </div>
+    </section>
+    <section class="text">
+      <table>
+        <thead>
+          <tr>
+            <td><b>Opção</b></td>
+            <td><b>Significado</b></td>
+            <td><b>Aplicação</b></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>$</td><td>Fim de uma linha.</td><td></td>
+          </tr>
+          <tr>
+            <td>
+              [xyz]
+            </td>
+            <td>
+              Identifica qualquer caracter dentro do grupo (colchetes []). O hífen pode ser utilizado para criar ranges.
+            </td>
+            <td>
+              /[AB]CD/ encontra "ACD" e "BCD" mas nao “CCD" porque “C” não está no grupo ([]).
+              [A-Z] identifica todas as maiúsculas de A a Z.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              [xyz]
+            </td>
+            <td>
+              Identifica qualquer caracter que não está dentro do grupo (colchetes []).
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td>\w</td><td>Caracteres alfanuméricos e underline ([A-Za-z0-9_]).</td><td></td>
+          </tr>
+          <tr>
+            <td>\W</td>
+            <td>Caracteres não alfanuméricos e diferentes de underline ([^A-Za-z0-9_]).</td>
+            <td>/\W/ encontra "%" em "20%" </td>
+          </tr>
+          <tr>
+            <td>
+              \d
+            </td>
+            <td>
+              Dígitos. ([0-9])
+            </td>
+            <td>
+              /\d/ encontra "19" em "A19"
+            </td>
+          </tr>
+          <tr>
+            <td>
+              \D
+            </td>
+            <td>
+              Não dígitos. ([^0-9])
+            </td>
+            <td>
+              /\D/ encontra "A" em "A19"
+            </td>
+          </tr>
+          <tr>
+            <td>
+              \s
+            </td>
+            <td>
+              Identifica espaços. ([ \t\r\n\v\f])
+            </td>
+            <td>
+
+            </td>
+          </tr>
+          <tr>
+            <td>
+              \S
+            </td>
+            <td>
+              Identifica caracteres que não são espaço. ([^ \t\r\n\v\f])
+            </td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="blue center">
+        <div class="text">
+            <h1>
+                E aí, a introdução a RegEx é isso aí.
+            </h1>
+        </div>
+        <div class="image">
+            <img src="../assets/img/wm.png" alt="Silhueta de rosto de mulher" />
+        </div>
+    </section>
+    <footer>
+        <p>
+            © InfoJr UFBA - 2017
+        </p>
+    </footer>
+  </body>
+</html>

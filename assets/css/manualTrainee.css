@@ -699,6 +699,8 @@ p {
   .text table td, section .text-right table td {
     border: 1px solid #FFF;
     padding: 10px 15px; }
+  .text table tr:nth-child(even), section .text-right table tr:nth-child(even) {
+    background-color: #d9e5f8; }
 
 /* PAGES - Individual styles */
 .reduces {
