@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../assets/css/manualTrainee.css">
+    <link rel="icon" type="image/png" href="../assets/img/infojr-ico.svg">
+    <title>Guias - JS</title>
+  </head>
+  <body>
+    <section class="center full js-yellow">
+      <div class="image">
+        <img src="assets/img/js.png" alt="JS" />
+        <h1>JavaScript</h1>
+        <!-- a linguagem de maior dinamicidade da web -->
+      </div>
+    </section>
+    <section>
+      <div class="text">
+        <h1>Sem ideia, o que é isso?</h1>
+        <p>
+          Óh, JavaScript (JS) é uma <a href="#">linguagem de programação dinâmica</a>, <a href="#">de tipificação fraca e interpretada</a>. Ela foi criada em 1995 pela Netscape Communications, empresa que desenvolveu um dos primeiros navegadores web. Mais tarde, a linguagem foi formalizada na especificação ECMAScript (ES), que vem evoluindo desde então.
+        </p>
+        <h3>Oxe, e pra quê eu vou usar?</h3>
+        <p>
+          Simples! Você vai usar, basicamente, para manipular os elementos da sua página! Ééé... Isso mesmo que você ouLeu. Quer um exemplo? Bom, você pode usar o JavaScript para fazer um elemento dançar na página, fazer um elemento mudar de cor, crescer, saltitar, desaparecer e aparecer, criar máscar de preenchimento para campos de texto e para uma infinidade de manipulações de elementos.
+        </p>
+      </div>
+    </section>
+    <section class="dark-blue">
+      <h3>Parece interessante, mas como faz?</h3>
+      <p>
+        Existem algumas maneiras de utilizar o JS para construir sua página dinâmica.
+      </p>
+      <p>
+        <b>Inline JavaScript</b>
+      </p>
+      <div class="code-block">
+        <code>
+          &lt<span class="hl-tag">a</span> <span class="attr">href</span>=<span class="value">"javascript:void(0)"</span>&gt</a>
+        </code>
+      </div>
+      <p>
+        <b>Internal JavaScript</b> - Você vai escrever o seu código JavaScript dentro da tag <code>script</code>.
+      </p>
+      <div class="code-block">
+        <code><span>1.. </span>&lt<span class="hl-tag">script</span>&gt</code>
+        <code><span>2.. ..</span><span class="attr">console</span>.<span class="value">log</span>( 1 + 1 )</code>
+        <code><span>3.. </span>&lt/<span class="hl-tag">script</span>&gt</code>
+      </div>
+      <p>
+        <b>External JavaScript</b> - Você vai escrever o seu código JavaScript em um arquivo com extensão .js, e esse arquivo será incluso em sua página HTML através do src da tag <code>script</code>.
+      </p>
+      <div class="code-block">
+        <code>
+          &lt<span class="hl-tag">script</span> <span class="attr">src</span>=<span class="value">"assets/js/filename.js"</span>&gt&lt/<span class="hl-tag">script</span>&gt
+        </code>
+      </div>
+    </section>
+    <section>
+      <h3>Então é isso?</h3>
+      <p>
+        Nããoo cabeeça. Você já sabe onde você vai escrever seu código, mas e aí? Como é que escreve?
+      </p>
+      <p>
+        Como toda e qualquer linguagem, o JavaScript possui sua própria sintaxe, e vamos falar sobre algumas coisas que são fundamentais para você INICIAR o desenvolvimento WEB com JavaScript.
+      </p>
+      <p>
+        Vamos começar!
+      </p>
+    </section>
+    <section>
+      <h3>Declarando variáveis.</h3>
+    </section>
+    <section>
+      <h3>Tipos de dados</h3>
+      <p>
+        Olhe só, como foi dito na primeira seção deste guia, JavaScript é uma linguagem de tipificação fraca. Isso significa que você não é obrigado a setar os tipos de dados de suas variáveis e dos retornos de suas funções, e no caso do JavaScript, não há como setar esses tipos.
+      </p>
+      <p>
+        <b>number</b> - O JS não separa decimais, inteiros, ou exponencias.
+      </p>
+      <div class="code-block">
+        <code><span class="hl-tag">var</span> x = 13;</code>
+        <code><span class="hl-tag">var</span> x = 9.81;</code>
+        <code><span class="hl-tag">var</span> x = 9.998e8;</code>
+      </div>
+      <p>
+        <b>string</b> - Representação em formato de texto.
+      </p>
+      <div class="code-block">
+        <code><span class="hl-tag">var</span> x = <span class="value">"Oi, eu sou o Goku."</span>;</code>
+        <code>console.log("Nunca ouvi falar desse tal \"Goku\"");</code>
+      </div>
+      <p>
+        Sobre strings, é importante dizer algumas coisas.
+      </p>
+      <p>
+        Você pode concatenar duas strings com o símbolo +.
+      </p>
+      <div class="code-block">
+        <code><span class="hl-tag">var</span> hello = <span class="value">"Oi, eu sou o "</span>;</code>
+        <code><span class="hl-tag">var</span> name = <span class="value">"Goku"</span>;</code>
+        <code>console.<span class="func">log</span>(<span class="value">hello + name</span>);</code>
+        <code>\\ Oi, eu sou o Goku</code>
+      </div>
+      <p>
+        <b>boolean</b> - Representação para verdadeiro ou falso.
+      </p>
+      <div class="code-block">
+        <code><span class="hl-tag">var</span> x = <span class="func">true</span>;</code>
+        <code><span class="hl-tag">var</span> x = (0 > 1); \\false</code>
+      </div>
+      <p>
+        <b>array</b> - Tipo composto de dados. Representa um conjunto de dados. No caso do JavaScript, o array pode ser formado com tipos mistos de dados.
+      </p>
+      <p>
+        Um array literal é uma lista de zero ou mais expressões, onde cada uma delas representa um elemento do array, inseridas entre colchetes ([]). Os elementos do array são indexados de zero até a quantidade de elementos do array - 1.
+      </p>
+      <div class="code-block">
+        <code><span class="hl-tag">var</span> arrA = [<span class="value">6, 7, 8, 9</span>];</code>
+        <code><span class="hl-tag">var</span> arrB = [<span class="value">'Marc', 1, 4, 2, 3, 0</span>];</code>
+        <code><span class="func">length</span>(arr); \\ Retorna 4.</code>
+        <code>console.<span class="func">log</span>(arrB[1]); \\ Imprime o valor 1 no console.</code>
+      </div>
+    </section>
+    <section>
+      <p>
+        <b>undefined</b> - Representação de ausência de valor.
+      </p>
+    </section>
+    <section class="center">
+        <div class="text">
+            <h1>E aí, a introdução ao desenvolvimento web com JavaScript é isso aí.</h1>
+        </div>
+        <div class="image">
+            <img src="../assets/img/wm.png" alt="Silhueta de rosto de mulher" />
+        </div>
+    </section>
+    <footer>
+        <p>© InfoJr UFBA - 2017</p>
+    </footer>
+  </body>
+</html>

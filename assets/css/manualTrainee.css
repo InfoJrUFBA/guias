@@ -340,6 +340,13 @@ p {
       -moz-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
       transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66); }
 
+.js-yellow {
+  background-color: #E5A228;
+  border-color: #E5A228;
+  color: #FFF; }
+  .js-yellow:hover {
+    background-color: nill; }
+
 .green {
   background-color: #70A649;
   border-color: #70A649;
@@ -701,6 +708,15 @@ p {
     padding: 10px 15px; }
   .text table tr:nth-child(even), section .text-right table tr:nth-child(even) {
     background-color: #d9e5f8; }
+
+.code-block .hl-tag {
+  color: #C33668; }
+.code-block .attr {
+  color: #81de2b; }
+.code-block .value {
+  color: #CEC74D; }
+.code-block .func {
+  color: #13C0A8; }
 
 /* PAGES - Individual styles */
 .reduces {
