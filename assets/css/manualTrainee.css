@@ -452,6 +452,22 @@ p {
   .ionic-blue:hover {
     background-color: nill; }
 
+.resp-blue {
+  color: #FFF;
+  background-color: #062831;
+}
+
+.resp-orange {
+  background-color: #E8940C;
+  color: #FFF;
+}
+
+.resp-deep-blue {
+  background-color: #F7FFDF;
+  color: #000;
+}
+
+
 .tag, .tag-blue, .tag-green, .tag-orange, .tag-red {
   border-radius: 3px;
   border: 1px solid;
@@ -763,6 +779,11 @@ p {
 @media (max-width: 520px) {
   .tools .tool {
     width: 40%;
-    margin: 30px 7.5px; } }
+    margin: 30px 7.5px; } 
+
+  .code-block {
+    border-radius: 0px;
+  }
+  }
 
 /*# sourceMappingURL=manualTrainee.css.map */
