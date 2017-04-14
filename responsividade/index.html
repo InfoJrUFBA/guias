@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../assets/css/manualTrainee.css">
+    <link rel="icon" type="image/ico" href="../assets/img/infojr-ico.ico">
+    <title>Guias - Responsividade</title>
+</head>
+<body>
+    <section class="center full resp-deep-blue">
+      <div class="image">
+        <img src="assets/img/responsividade.png" />
+        <h1>Responsividade</h1>
+      </div>
+    </section>
+
+    <section  class="resp-blue" name="viewport">
+        <h1>Viewport</h1>
+
+        <p>A long time ago in a galaxy far, far away, antes dos smartphones e tablets as pessoas navegavam na web utilizando apenas computadores, então o design das páginas era estático. Só que a forma de acessar a web mudou e os tamanhos fixos pensados apenas para desktops eram grandes demais para se encaixar nas telas dos smartphones e tablets.</p>
+
+        <p>Daí os navegadores passaram a utilizar o viewport como uma forma de corrigir a escala (lê-se: fizeram um armengue pra se adaptar à largura diferente desses novos dispositivos).</p>
+
+        <p>Viewport é basicamente a área visível da sua página, é a área na qual será disposto todo o conteúdo do site. Ele depende do dispositivo utilizado e corresponde ao tamanho da janela do navegador, desconsiderando as barras de ferramenta, rolagem, navegação e etc.</p>
+        <p>Aí você inclui isso entre < head > e < /head> </p>
+        <div class="code-block" name="viewport">
+            <code><span>1..</span> < meta name="viewport" content="width=device-width, initial-scale=1" ></code>
+        </div>
+
+        <h2>width=device-width</h2>
+        <p>Isso assumirá o valor específico de largura para cada aparelho.</p>
+
+        <h2>initial-scale=1 </h2>
+        <p>indica para o navegador o zoom inicial em que a página deve abrir.</p>
+    </section>
+
+    <section class="resp-orange" name="layouts-fluidos">
+        <h1>Layouts fluídos</h1>
+        <p>Desenvolver um layout fluído é basicamente não utilizar medidas fixas para como pixels para estabelecer o tamanho dos elementos que compõem o design. </p>
+
+        <h2>Medidas flexíveis</h2>
+        <h3>Porcentagens</h3>
+        <p>As porcentagens são utilizadas para especificar as medidas de tamanho em relação ao elemento pai.</p>
+
+        <div class="code-block" name="porcentagens">
+            <code><span>1 .. </span> body { </code>
+            <code><span>2 .... </span>width: 100%</code>
+            <code><span>3 .. </span> }</code>
+            <code><span>4 .. </span> .left { </code>
+            <code><span>5 .... </span> width: 50%;</code>
+            <code><span>6 .... </span> float: left;</code>
+            <code><span>8 .. </span> }</code>
+
+            <code><span>9 ..</span>.right { </code>
+            <code><span>10....</span> width: 50%;</code>
+            <code><span>11....</span> float: right;</code>
+            <code><span>13..</span> } </code>
+        </div>
+
+        <p>As classes left e right, filhas de body ocupam cada uma metade do tamanho de body que, por sua vez ocupa 100% da página, portanto cada uma dessas classes ocupa metade da página, independente do seu tamanho.</p>
+
+        <h3>em</h3>
+        <p>Também é possível utilizar porcentagens no font-size, fazendo com que o tamanho da fonte de um elemento seja relativo ao tamanho da fonte do elemento pai. O em funciona nessa pegada; definir o tamanho da fonte de um elemento em <code> 300% </code> ou <code> 3em </code> dá no mesmo. Dessa forma, para definir o tamanho de fonte de um elemento 50% menor que a do elemento pai é só utilizar <code>0.5em</code>.
+        </p>
+        <p>Ah, o em vai SEMPRE considerar o elemento pai como referência para o tamanho da fonte seguinte, então se no meio do código você resolver alterar o tamanho do texto de um elemento, você acaba alterando o tamanho dos filhos dele também.</p>
+
+        <h3>rem</h3>
+        <p>O rem funciona mais ou menos como o em só que ao invés de utilizar o elemento pai como referência, ele utiliza o elemento raíz, que é a tag html (daí a letra r no comecinho, vem de root-em).</p>
+        <p>Isso evita aquele problema de alterar um elemento que utiliza em e acabar alterando o tamanho de todos os seus dependentes.</p>
+        <p>Isso significa que todos os tamanhos de fontes dos elementos terão como referência o tamanho de fonte estabelecido na tag html.</p>
+
+        <div class="code-block" name="rem">
+            <code><span>1..</span>html {</code>
+            <code><span>2....</span>font-size: 16px;</code>
+            <code><span>3..</span>}</code>
+            <code><span>4..</span>.son {</code>
+            <code><span>5....</span>font-size: 0.5 rem;  /* O font-size desse elemento é metade do tamanho do elemento raíz, 8px */</code>
+            <code><span>6..</span>}</code>
+        </div>
+
+        <h3>vw e vh</h3>
+        <p>Ambas as unidades têm relação com a janela do navegador:</p>
+        <ul>
+            <li> O vh [viewport-height] corresponde a 1% da <b>altura</b> da janela do navegador</li>
+            <li>O vw [viewport-width] corresponde a 1% da <b>largura</b> da janela do navegador</li>
+        </ul>
+        <br>
+        <p>Ah, favor não confundir seu uso com o da porcentagem:</p>
+        <p> A porcentagem utiliza como referência <i>a largura do elemento pai </i>, enquanto que vh e vw utilizam a <i>altura e largura</i> (respectivamente) <i>da janela do navegador</i> como referência pro tamanho, ok? ok.</p>
+    </section>
+
+    <section name="media-query">
+        <h1>Media Query</h1>
+        <p>
+            E aí tá você testando várias dimensões diferentes no navegador tod@ animad@ que o código tá se adaptando ao tamanho da página até que, chega o momento em que, como já dizia Robsão, na época do <a href="https://www.youtube.com/watch?v=GgjIxexy_T0"> Black Style</a>, </p>
+                    <blockquote> quebra, todo mundo quebra. </blockquote>
+            <p>Ok, pode até não quebrar mas, às vezes quando o tamanho da tela é menor, fica tudo estranho e espremido, o que não dá ao usuário a melhor experiência de todas.
+        </p>
+
+        <p>É por essas e outras que a gente usa media queries.</p>
+        <p>A partir delas a gente pode utilizar algo chamado design condicional onde regras de css serão aplicadas em situações específicas. Não entendeu? Perainda.</p>
+
+        <div class="code-block" name="media">
+            <code><span>1..</span> .item {</code>
+            <code><span>2....</span>     width: 25%;</code>
+            <code><span>3..</span> }</code>
+            <code><span>4..</span></code>
+            <code><span>5..</span>@media (max-width: 360px) {</code>
+            <code><span>6....</span> .item {</code>
+            <code><span>7......</span> width: 100%;</code>
+            <code><span>8....</span> }</code>
+            <code><span>9..</span> }</code>
+        </div>
+
+
+        <p>Na linha 5 a gente tem a sintaxe do media query, que consiste basicamente em você utilizar o @media e entre os parênteses a condição que deve ser satisfeita.</p>
+        <p>Nesse caso a largura da classe item é alterada quando a condição (max-width: 360px) é satisfeita, ou seja, enquanto a largura da tela for <b>menor ou igual</b> a 360px, a largura do item vai ser 100% do valor do elemento pai. Quando a largura da tela ultrapassar este valor, a largura de width passará a ser 25% do elemento pai.</p>
+        <p>Se você ainda não sacou pra que a gente pode utilizar media queries, lembre que celulares têm dimensões diferentes e você vai querer que seu site fique bom independente das dimensões do aparelho no qual ele será visualizado.</p>
+        <p>E você não precisa ficar testando o site no celular, os navegadores possibilitam que você simule dimensões diferentes no modo de inspeção de elemento.</p>
+        <ul>
+          <li>
+            No firefox o atalho é o <code>ctrl + shift + m </code><br>
+          </li>
+          <li>
+            No chrome esse atalho funciona também, mas só com o Inspecionar elemento aberto.
+          </li>
+        </ul>
+        <p>
+          Uma vantagem do chrome é que o navegador tem pré-definidos as dimensões de alguns dispositivos, o que poupa o trabalho de pesquisar e inserir no navegador.
+        </p>
+    </section>
+
+    <section class="center">
+        <div class="text">
+            <h1>Agora é só codar.</h1>
+        </div>
+        <div class="image">
+            <img src="assets/img/vader.png" width="200px" alt="Capacete do Darth Vader" />
+        </div>
+    </section>
+
+    <footer>
+        <p>© InfoJr UFBA - 2017</p>
+    </footer>
+</body>
+</html>
